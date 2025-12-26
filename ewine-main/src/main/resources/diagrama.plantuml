@@ -1,0 +1,301 @@
+@startuml E-Wine - Diagrama de Classes
+
+skinparam class {
+    BackgroundColor<<Entity>> #E8F5E9
+    BackgroundColor<<Service>> #E3F2FD
+    BackgroundColor<<Resource>> #FFF3E0
+    BackgroundColor<<DTO>> #F3E5F5
+    BorderColor Black
+    ArrowColor Black
+}
+
+' ========================================
+' ENTIDADES PRINCIPAIS
+' ========================================
+
+abstract class Produto <<Entity>> {
+    - id:  Long
+    - sku: String
+    - nome:  String
+    - descricao:  String
+    - preco: double
+    - ativo: boolean
+    - dataCriacao: LocalDateTime
+    __
+    + atualizar(nome, descricao)
+    + atualizarPreco(novoPreco)
+    + atualizarEstoque(quantidade)
+    + temEstoque(quantidade): boolean
+    + diminuirEstoque(quantidade)
+    + aumentarEstoque(quantidade)
+}
+
+class Vinho <<Entity>> {
+    - teorAlcoolico: double
+    - volume:  int
+    __
+    + atualizar(dados)
+}
+
+class Usuario <<Entity>> {
+    - id: Long
+    - nome: String
+    - login: String
+    - senha: String
+    - perfil: Perfil
+    - ativo: boolean
+    __
+    + atualizar(nome)
+    + alterarSenha(novaSenha)
+    + isAdmin(): boolean
+}
+
+enum Perfil <<Entity>> {
+    ADMIN
+    CLIENTE
+}
+
+class Cliente <<Entity>> {
+    - id: Long
+    - cpf: String
+    - email: String
+    __
+    + getEndereco(id): Endereco
+    + addEndereco(endereco)
+}
+
+class Endereco <<Entity>> {
+    - id: Long
+    - CEP: String
+    - logradouro: String
+    - numero: int
+    - complemento: String
+}
+
+class Cidade <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+class Pedido <<Entity>> {
+    - id: Long
+    - status: PedidoStatus
+    - dataCriacao: LocalDateTime
+    - dataFinalizacao: LocalDateTime
+    __
+    + confirmarPagamento(transacaoId)
+    + enviar()
+    + confirmarEntrega()
+    + cancelar()
+    + getTotal(): double
+    + isPago(): boolean
+}
+
+enum PedidoStatus <<Entity>> {
+    AGUARDANDO_PAGAMENTO
+    PAGO
+    ENVIADO
+    ENTREGUE
+    CANCELADO
+}
+
+class ItemPedido <<Entity>> {
+    - id: Long
+    - quantidade: int
+    - precoUnitario: double
+    - nomeProduto: String
+    __
+    + getSubtotal(): double
+}
+
+class Pagamento <<Entity>> {
+    - id: Long
+    - valorTotal:  double
+    - parcelas: int
+    - valorParcela:  double
+    - status: StatusPagamento
+    - transacaoExternaId: String
+    - dataCriacao: LocalDateTime
+    __
+    + confirmar(transacaoId)
+    + recusar()
+    + isPendente(): boolean
+    + isConfirmado(): boolean
+}
+
+enum StatusPagamento <<Entity>> {
+    PENDENTE
+    CONFIRMADO
+    RECUSADO
+}
+
+class FormaPagamento <<Entity>> {
+    - id:  Long
+    - nome: String
+    - permiteParcelamento:  boolean
+    - ativo: boolean
+}
+
+' Entidades de Relacionamento do Vinho
+class Pais <<Entity>> {
+    - id: Long
+    - nome:  String
+}
+
+class TipoVinho <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+class Marca <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+class Safra <<Entity>> {
+    - id:  Long
+    - ano: int
+}
+
+class Uva <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+class Estilo <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+class Ocasiao <<Entity>> {
+    - id: Long
+    - nome: String
+}
+
+' ========================================
+' SERVICES
+' ========================================
+
+interface PedidoService <<Service>> {
+    + listarTodos(): List
+    + cadastrar(login, input): PedidoResponse
+    + confirmarPagamento(id, transacaoId): PedidoResponse
+    + enviar(id): PedidoResponse
+    + cancelar(id): PedidoResponse
+}
+
+interface PagamentoService <<Service>> {
+    + processarPagamentoPix(pedidoId): Response
+    + processarPagamentoBoleto(pedidoId): Response
+    + processarPagamentoCartao(pedidoId, input): Response
+}
+
+interface ProdutoService <<Service>> {
+    + buscarPorId(id): Object
+    + buscarTodos(): List
+    + cadastrar(dto): VinhoResponse
+    + atualizar(id, dto): VinhoResponse
+}
+
+' ========================================
+' RESOURCES
+' ========================================
+
+class PedidoResource <<Resource>> {
+    - service: PedidoService
+    __
+    + listarTodos(): Response
+    + criar(input): Response
+    + enviar(id): Response
+}
+
+class PagamentoResource <<Resource>> {
+    - service:  PagamentoService
+    __
+    + processarPagamentoPix(pedidoId): Response
+    + processarPagamentoBoleto(pedidoId): Response
+    + processarPagamentoCartao(pedidoId, input): Response
+}
+
+class ProdutoResource <<Resource>> {
+    - service:  ProdutoService
+    __
+    + findAll(): Response
+    + findById(id): Response
+    + create(dto): Response
+}
+
+' ========================================
+' DTOs
+' ========================================
+
+class PedidoInput <<DTO>> {
+    + parcelas:  Integer
+    + itens: List
+}
+
+class PedidoResponse <<DTO>> {
+    + id: Long
+    + status: PedidoStatus
+}
+
+class VinhoInput <<DTO>> {
+    + nome: String
+    + preco:  double
+}
+
+' ========================================
+' RELACIONAMENTOS - HERANÇA
+' ========================================
+
+Produto <|-- Vinho
+
+' ========================================
+' RELACIONAMENTOS - COMPOSIÇÃO
+' ========================================
+
+Usuario "1" *-- "1" Perfil
+Cliente "1" *-- "1" Usuario
+Cliente "1" o-- "*" Endereco
+Endereco "*" --> "1" Cidade
+
+Pedido "1" *-- "*" ItemPedido
+Pedido "1" *-- "1" Pagamento
+Pedido "1" *-- "1" PedidoStatus
+Pedido "*" --> "1" Cliente
+Pedido "*" --> "1" Endereco
+
+ItemPedido "*" --> "1" Produto
+
+Pagamento "1" *-- "1" StatusPagamento
+Pagamento "*" --> "1" FormaPagamento
+
+' ========================================
+' RELACIONAMENTOS - VINHO
+' ========================================
+
+Vinho "*" --> "1" Pais
+Vinho "*" --> "1" TipoVinho
+Vinho "*" --> "1" Marca
+Vinho "*" --> "1" Safra
+Vinho "*" --> "*" Uva
+Vinho "*" --> "0..1" Estilo
+Vinho "*" --> "0.. 1" Ocasiao
+
+' ========================================
+' RELACIONAMENTOS - CAMADAS
+' ========================================
+
+PedidoResource --> PedidoService
+PagamentoResource --> PagamentoService
+ProdutoResource --> ProdutoService
+
+PedidoService ..> Pedido
+PagamentoService ..> Pagamento
+ProdutoService ..> Produto
+
+PedidoResource ..> PedidoInput
+PedidoResource ..> PedidoResponse
+ProdutoResource ..> VinhoInput
+
+@enduml

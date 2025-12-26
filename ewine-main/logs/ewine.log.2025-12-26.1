@@ -1,0 +1,249 @@
+2025-12-17 09:14:40 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 17.586s. Listening on: http://localhost:8080
+                 2025-12-17 09:14:40 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
+                 2025-12-17 09:14:40 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+                 2025-12-17 09:28:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2025-12-17 09:28:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Zezin
+                 2025-12-17 09:28:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zeze
+                 2025-12-17 09:28:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2025-12-17 09:28:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2025-12-17 09:28:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zeze está disponível
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [zeze]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [Zezin]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [CLIENTE]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2025-12-17 09:28:39 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando cliente...
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [ze@gmail.com]
+                 2025-12-17 09:28:39 TRACE [or.hi.or.jd.bind] binding parameter (3:BIGINT) <- [3]
+                 2025-12-17 09:28:39 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ✅ Cliente cadastrado com sucesso!
+                 2025-12-17 09:28:39 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do usuário: 3
+                 2025-12-17 09:28:39 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do cliente: 2
+                 2025-12-17 09:28:39 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ====================================
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO ENDEREÇO =====
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Cliente login: zeze
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CEP: 77001-000
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Logradouro: Quadra 103 Norte
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Número: 1
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Cidade ID: 1
+                 2025-12-17 09:51:14 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Montando entidade Endereco...
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:51:14 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Buscando cliente por login...
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [1]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [3]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 09:51:14 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Cliente possui 0 endereço(s)
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [77001-000]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (2:BIGINT) <- [1]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [Apto 101]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [Quadra 103 Norte]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (5:INTEGER) <- [1]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 09:51:14 TRACE [or.hi.or.jd.bind] binding parameter (2:BIGINT) <- [2]
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ✅ Endereço cadastrado com sucesso!
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Total de endereços do cliente: 1
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do endereço: 2
+                 2025-12-17 09:51:14 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ================================
+                 2025-12-17 09:53:35 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2025-12-17 09:53:35 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2025-12-17 09:53:35 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== CADASTRANDO NOVO VINHO =====
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Nome: VINZIN
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] SKU:  x-123-11
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Preço: R$ 12.0
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Estoque inicial: 12
+                 2025-12-17 09:59:10 DEBUG [br.un.to.ew.se.im.ProdutoServiceImpl] Validando SKU único...
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [x-123-11]
+                 2025-12-17 09:59:10 DEBUG [br.un.to.ew.se.im.ProdutoServiceImpl] SKU x-123-11 está disponível
+                 2025-12-17 09:59:10 DEBUG [br.un.to.ew.se.im.ProdutoServiceImpl] Montando entidade Vinho.. .
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 09:59:10 DEBUG [br.un.to.ew.se.im.ProdutoServiceImpl] Persistindo no banco...
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (2:TIMESTAMP) <- [2025-12-17T09:59:10.525987300]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [bomdi mais]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (4:INTEGER) <- [12]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [null]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (6:VARCHAR) <- [VINZIN]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (7:DOUBLE) <- [12.0]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (8:VARCHAR) <- [x-123-11]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (9:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (10:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (11:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (12:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (13:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (14:DOUBLE) <- [45.0]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (15:BIGINT) <- [1]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (16:INTEGER) <- [1]
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho cadastrado com sucesso!
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ID do produto: 2
+                 2025-12-17 09:59:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ==================================
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 09:59:10 TRACE [or.hi.or.jd.bind] binding parameter (2:BIGINT) <- [1]
+                 2025-12-17 10:00:07 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2025-12-17 10:00:07 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2025-12-17 10:00:07 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] ===== INICIANDO CADASTRO DE PEDIDO =====
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Login: zeze
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Quantidade de itens: 2
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Parcelas: 5
+                 2025-12-17 10:01:30 DEBUG [br.un.to.ew.se.im.PedidoServiceImpl] Montando entidade Pedido.. .
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [Cartão de Crédito]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [3]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 10:01:30 DEBUG [br.un.to.ew.se.im.PedidoServiceImpl] Valor total do pedido: R$ 191.8
+                 2025-12-17 10:01:30 DEBUG [br.un.to.ew.se.im.PedidoServiceImpl] Status inicial: AGUARDANDO_PAGAMENTO
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Persistindo pedido no banco de dados...
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:TIMESTAMP) <- [null]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:TIMESTAMP) <- [2025-12-17T10:01:30.904986]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (3:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (4:INTEGER) <- [5]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [PENDENTE]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (6:VARCHAR) <- [null]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (7:DOUBLE) <- [38.36]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (8:DOUBLE) <- [191.8]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:TIMESTAMP) <- [2025-12-17T10:01:30.900018700]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (3:TIMESTAMP) <- [null]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (4:BIGINT) <- [2]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (5:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (6:VARCHAR) <- [AGUARDANDO_PAGAMENTO]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [Miolo Reserva Cabernet Sauvignon]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (3:DOUBLE) <- [89.9]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (4:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (5:INTEGER) <- [2]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [VINZIN]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (3:DOUBLE) <- [12.0]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (4:BIGINT) <- [2]
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (5:INTEGER) <- [1]
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] ✅ Pedido cadastrado com sucesso!
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] ID do pedido: 1
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Valor total: R$ 191.8
+                 2025-12-17 10:01:30 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] =========================================
+                 2025-12-17 10:01:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:11:02 INFO  [br.un.to.ew.se.im.PagamentoServiceImpl] 🔵 Processando pagamento CARTÃO DE CRÉDITO para pedido ID: 1
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2]]
+                 2025-12-17 10:11:02 INFO  [br.un.to.ew.se.im.PagamentoServiceImpl] ✅ Pagamento CARTÃO processado com sucesso! Transação: CC-d958e9c2
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:TIMESTAMP) <- [null]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (2:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [PAGO]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (4:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:TIMESTAMP) <- [2025-12-17T10:11:02.948798600]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [CONFIRMADO]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [CC-d958e9c2]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (4:BIGINT) <- [1]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [Vinho tinto elegante com notas de frutas vermelhas maduras, taninos suaves e final persistente.]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [48]
+                 2025-12-17 10:11:02 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [null]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [Miolo Reserva Cabernet Sauvignon]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (6:DOUBLE) <- [89.9]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (7:VARCHAR) <- [VIN-MIO-CS-2020-750]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (8:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (9:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (10:BIGINT) <- [2]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (11:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (12:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (13:DOUBLE) <- [13.5]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (14:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (15:INTEGER) <- [750]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (16:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [bomdi mais]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [11]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [null]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [VINZIN]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (6:DOUBLE) <- [12.0]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (7:VARCHAR) <- [x-123-11]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (8:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (9:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (10:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (11:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (12:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (13:DOUBLE) <- [45.0]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (14:BIGINT) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (15:INTEGER) <- [1]
+                 2025-12-17 10:11:03 TRACE [or.hi.or.jd.bind] binding parameter (16:BIGINT) <- [2]
+                 2025-12-17 10:12:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1]]
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 2
+                 2025-12-17 10:12:31 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Listando pedidos do cliente: zeze
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2025-12-17 10:12:31 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2]]
+                 2025-12-17 10:12:31 INFO  [br.un.to.ew.se.im.PedidoServiceImpl] Encontrados 1 pedido(s) para o cliente: zeze
+                 2025-12-17 10:23:07 INFO  [or.hi.jp.in.ut.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: <default>]
+                 2025-12-17 10:23:07 INFO  [or.hi.Version] HHH000412: Hibernate ORM core version 7.1.0.Final
+                 2025-12-17 10:23:08 INFO  [or.hi.or.co.pooling] HHH10001005: Database info:
+	Database JDBC URL [undefined/unknown]
+	Database driver: undefined/unknown
+	Database dialect: H2Dialect
+	Database version: 2.3.230
+	Default catalog/schema: unknown/unknown
+	Autocommit mode: undefined/unknown
+	Isolation level: <unknown>
+	JDBC fetch size: undefined/unknown
+	Pool: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+                 2025-12-17 10:23:08 INFO  [or.hi.va.in.ut.Version] HV000001: Hibernate Validator 9.0.1.Final
+                 2025-12-17 10:23:09 WARN  [io.qu.config] The "quarkus.log.file.enable" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:23:09 WARN  [io.qu.config] The "quarkus.hibernate-orm.database.generation" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:23:09 WARN  [io.qu.config] The "quarkus.http.cors" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:23:09 WARN  [io.qu.config] The "quarkus.log.console.color" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:24:34 INFO  [or.hi.jp.in.ut.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: <default>]
+                 2025-12-17 10:24:35 INFO  [or.hi.Version] HHH000412: Hibernate ORM core version 7.1.0.Final
+                 2025-12-17 10:24:35 INFO  [or.hi.or.co.pooling] HHH10001005: Database info:
+	Database JDBC URL [undefined/unknown]
+	Database driver: undefined/unknown
+	Database dialect: H2Dialect
+	Database version: 2.3.230
+	Default catalog/schema: unknown/unknown
+	Autocommit mode: undefined/unknown
+	Isolation level: <unknown>
+	JDBC fetch size: undefined/unknown
+	Pool: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+                 2025-12-17 10:24:36 INFO  [or.hi.va.in.ut.Version] HV000001: Hibernate Validator 9.0.1.Final
+                 2025-12-17 10:24:36 WARN  [io.qu.config] The "quarkus.log.file.enable" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:24:36 WARN  [io.qu.config] The "quarkus.hibernate-orm.database.generation" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:24:36 WARN  [io.qu.config] The "quarkus.http.cors" config property is deprecated and should not be used anymore.
+                 2025-12-17 10:24:36 WARN  [io.qu.config] The "quarkus.log.console.color" config property is deprecated and should not be used anymore.
+                 
