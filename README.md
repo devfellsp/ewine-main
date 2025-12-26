@@ -1,4 +1,8 @@
-# 📄 **README. md COMPLETO PARA O PROJETO E-WINE**
+```markdown
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-85%25-green)
+![Contributors](https://img.shields.io/badge/contributors-1-blue)
+```
 
 ```markdown
 # 🍷 E-Wine API
@@ -383,35 +387,8 @@ Este projeto está sob a licença MIT.  Veja o arquivo [LICENSE](LICENSE) para m
 </div>
 ```
 
----
 
-## 🚀 **COMO ADICIONAR AO PROJETO:**
 
-### **1️⃣ Criar arquivo `README.md` na raiz:**
 
-```bash
-# No terminal do IntelliJ
-touch README.md
-```
 
-### **2️⃣ Colar o conteúdo acima**
 
-### **3️⃣ Commit e Push:**
-
-```bash
-git add README.md
-git commit -m "docs: adicionar README completo do projeto"
-git push origin main
-```
-
----
-
-## 📸 **BADGES PERSONALIZADOS (OPCIONAL):**
-
-Adicione no topo do README:
-
-```markdown
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![Coverage](https://img.shields.io/badge/coverage-85%25-green)
-![Contributors](https://img.shields.io/badge/contributors-1-blue)
-```
