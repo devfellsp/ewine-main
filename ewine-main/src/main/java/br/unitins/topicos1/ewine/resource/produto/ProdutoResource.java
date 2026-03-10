@@ -99,4 +99,12 @@ public class ProdutoResource {
 
     return Response.status(Response.Status.OK).entity(response).build();
   }
+  @DELETE
+  @Path("/{id}")
+  @RolesAllowed({"ADMIN"})
+  @SecurityRequirement(name = "bearerAuth")
+  public Response deletar(@PathParam("id") Long id) {
+    produtoService.deletar(id);
+    return Response.noContent().build();
+  }
 }

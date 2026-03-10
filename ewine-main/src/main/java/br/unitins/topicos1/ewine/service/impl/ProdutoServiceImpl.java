@@ -246,4 +246,29 @@ public class ProdutoServiceImpl implements ProdutoService {
               return new NotFoundException("Produto não encontrado com ID:  " + id);
             });
   }
+
+  @Override
+  @Transactional
+  public void deletar(Long id) {
+    LOG.info("===== DELETANDO PRODUTO =====");
+    LOG.info("Produto ID: " + id);
+
+    try {
+      Produto produto = produtoRepository.findById(id);
+
+      if (produto == null) {
+        LOG.error("Produto ID " + id + " não encontrado");
+        throw new NotFoundException("Produto não encontrado");
+      }
+
+      produtoRepository.delete(produto);
+
+      LOG.info("✅ Produto deletado com sucesso!");
+      LOG.info("=============================");
+
+    } catch (Exception e) {
+      LOG.error("❌ Erro ao deletar produto ID " + id + ": " + e.getMessage());
+      throw e;
+    }
+  }
 }

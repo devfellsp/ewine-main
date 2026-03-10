@@ -17,6 +17,8 @@ public interface ProdutoService {
 
   VinhoResponse atualizar(Long id, VinhoInput dto);
 
+  void deletar(Long id);
+
   Object buscarPorId(Long id);
 
   List<ProdutoResponse> buscarTodos();
