@@ -39,7 +39,7 @@ public abstract class Produto extends DefaultEntity {
   @Embedded private Estoque estoque;
 
   protected Produto(
-      String sku, String nome, String descricao, double preco, int quantidadeEstoque) {
+          String sku, String nome, String descricao, double preco, int quantidadeEstoque) {
     if (sku == null || sku.isBlank()) {
       throw new IllegalArgumentException("SKU é obrigatório");
     }
@@ -61,13 +61,20 @@ public abstract class Produto extends DefaultEntity {
     this.ativo = true;
   }
 
-  public void atualizar(String nome, String descricao) {
+  // ✅ CORRIGIDO: agora atualiza também preco e estoque
+  public void atualizar(String nome, String descricao, double preco, int quantEstoque) {
     if (nome == null || nome.isBlank()) {
       throw new IllegalArgumentException("Nome é obrigatório");
     }
 
+    if (preco <= 0) {
+      throw new IllegalArgumentException("Preço deve ser maior que zero");
+    }
+
     this.nome = nome.trim();
     this.descricao = descricao;
+    this.preco = preco;
+    this.estoque = new Estoque(quantEstoque);
   }
 
   public void atualizarPreco(double novoPreco) {
@@ -89,7 +96,6 @@ public abstract class Produto extends DefaultEntity {
   public void altenarAtivo() {
     this.ativo = !this.ativo;
   }
-
 
   public boolean temEstoque(int quantidade) {
     return ativo && estoque.temDisponivel(quantidade);

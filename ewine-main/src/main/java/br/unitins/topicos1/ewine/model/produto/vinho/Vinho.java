@@ -35,9 +35,9 @@ public class Vinho extends Produto {
 
   @ManyToMany
   @JoinTable(
-      name = "vinho_uva",
-      joinColumns = @JoinColumn(name = "vinho_id"),
-      inverseJoinColumns = @JoinColumn(name = "uva_id"))
+          name = "vinho_uva",
+          joinColumns = @JoinColumn(name = "vinho_id"),
+          inverseJoinColumns = @JoinColumn(name = "uva_id"))
   private List<Uva> uvas;
 
   @ManyToOne
@@ -51,18 +51,18 @@ public class Vinho extends Produto {
   protected Vinho() {}
 
   public Vinho(
-      String sku,
-      double preco,
-      int estoque,
-      String nome,
-      String descricao,
-      double teorAlcoolico,
-      int volume,
-      Pais pais,
-      TipoVinho tipoVinho,
-      Marca marca,
-      Safra safra,
-      List<Uva> uvas) {
+          String sku,
+          double preco,
+          int estoque,
+          String nome,
+          String descricao,
+          double teorAlcoolico,
+          int volume,
+          Pais pais,
+          TipoVinho tipoVinho,
+          Marca marca,
+          Safra safra,
+          List<Uva> uvas) {
     super(sku, nome, descricao, preco, estoque);
 
     this.setTeorAlcoolico(teorAlcoolico);
@@ -74,19 +74,22 @@ public class Vinho extends Produto {
     this.setUvas(uvas);
   }
 
+  // ✅ CORRIGIDO: agora recebe preco e quantEstoque
   public void atualizar(
-      String nome,
-      String descricao,
-      double teorAlcoolico,
-      int volume,
-      Pais pais,
-      TipoVinho tipoVinho,
-      Marca marca,
-      Safra safra,
-      List<Uva> uvas,
-      Estilo estilo,
-      Ocasiao ocasiao) {
-    super.atualizar(nome, descricao);
+          String nome,
+          String descricao,
+          double preco,
+          int quantEstoque,
+          double teorAlcoolico,
+          int volume,
+          Pais pais,
+          TipoVinho tipoVinho,
+          Marca marca,
+          Safra safra,
+          List<Uva> uvas,
+          Estilo estilo,
+          Ocasiao ocasiao) {
+    super.atualizar(nome, descricao, preco, quantEstoque);
 
     this.setTeorAlcoolico(teorAlcoolico);
     this.setVolume(volume);

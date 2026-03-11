@@ -38,13 +38,11 @@ public class ProdutoServiceImpl implements ProdutoService {
         throw new NotFoundException("Produto não encontrado");
       }
 
-      // ✅ CORRIGIDO
       LOG.debug("Estoque anterior: " + produto.getEstoque().getQuantidade());
 
       produto.atualizarEstoque(quantidade);
 
       LOG.info("✅ Estoque atualizado com sucesso!");
-      // ✅ CORRIGIDO
       LOG.info("Estoque atual: " + produto.getEstoque().getQuantidade());
       LOG.info("=============================");
 
@@ -121,14 +119,13 @@ public class ProdutoServiceImpl implements ProdutoService {
     LOG.info("Nome: " + input.nome());
     LOG.info("SKU:  " + input.sku());
     LOG.info("Preço: R$ " + input.preco());
-    // ✅ CORRIGIDO
     LOG.info("Estoque inicial: " + input.quantEstoque());
 
     try {
       LOG.debug("Validando SKU único...");
       validarSkuUnico(input.sku());
 
-      LOG.debug("Montando entidade Vinho.. .");
+      LOG.debug("Montando entidade Vinho...");
       Vinho novoVinho = assembler.toEntity(input);
 
       LOG.debug("Persistindo no banco...");
@@ -150,6 +147,7 @@ public class ProdutoServiceImpl implements ProdutoService {
   }
 
   @Override
+  @Transactional
   public VinhoResponse atualizar(Long id, VinhoInput input) {
     LOG.info("===== ATUALIZANDO VINHO =====");
     LOG.info("Produto ID: " + id);
@@ -165,23 +163,26 @@ public class ProdutoServiceImpl implements ProdutoService {
 
       Vinho atualizado = assembler.toEntity(input);
 
+      // ✅ CORRIGIDO: agora passa preco e quantEstoque
       vinho.atualizar(
-          atualizado.getNome(),
-          atualizado.getDescricao(),
-          atualizado.getTeorAlcoolico(),
-          atualizado.getVolume(),
-          atualizado.getPaisDeOrigem(),
-          atualizado.getTipoVinho(),
-          atualizado.getMarca(),
-          atualizado.getSafra(),
-          atualizado.getUvas(),
-          atualizado.getEstilo(),
-          atualizado.getOcasiao());
+              atualizado.getNome(),
+              atualizado.getDescricao(),
+              atualizado.getPreco(),
+              atualizado.getQuantidadeEstoque(),
+              atualizado.getTeorAlcoolico(),
+              atualizado.getVolume(),
+              atualizado.getPaisDeOrigem(),
+              atualizado.getTipoVinho(),
+              atualizado.getMarca(),
+              atualizado.getSafra(),
+              atualizado.getUvas(),
+              atualizado.getEstilo(),
+              atualizado.getOcasiao());
 
       LOG.info("✅ Vinho atualizado com sucesso!");
       LOG.info("=============================");
 
-      return assembler.toResponse(atualizado);
+      return assembler.toResponse(vinho);
 
     } catch (Exception e) {
       LOG.error("❌ Erro ao atualizar vinho ID " + id + ": " + e.getMessage());
@@ -239,12 +240,12 @@ public class ProdutoServiceImpl implements ProdutoService {
 
   private Produto produtoExistente(Long id) {
     return produtoRepository
-        .findByIdOptional(id)
-        .orElseThrow(
-            () -> {
-              LOG.error("Produto com ID " + id + " não existe");
-              return new NotFoundException("Produto não encontrado com ID:  " + id);
-            });
+            .findByIdOptional(id)
+            .orElseThrow(
+                    () -> {
+                      LOG.error("Produto com ID " + id + " não existe");
+                      return new NotFoundException("Produto não encontrado com ID:  " + id);
+                    });
   }
 
   @Override

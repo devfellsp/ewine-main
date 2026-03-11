@@ -1,0 +1,890 @@
+2026-03-11 12:02:19 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 10.839s. Listening on: http://localhost:8080
+                 2026-03-11 12:02:19 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
+                 2026-03-11 12:02:19 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:02:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:02:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:02:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:03:02 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:03:02 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Ze
+                 2026-03-11 12:03:02 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zezin
+                 2026-03-11 12:03:02 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:03:02 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:03:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zezin]
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zezin está disponível
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:03:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:03:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:03:02 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:03:02 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Nome deve ter no mínimo 3 caracteres
+                 2026-03-11 12:03:02 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zezin, CPF: 07116358110, Email: ze@gmail.com
+                 2026-03-11 12:03:04 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:03:04 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Ze
+                 2026-03-11 12:03:04 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zezin
+                 2026-03-11 12:03:04 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:03:04 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:03:04 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zezin]
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zezin está disponível
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:03:04 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:03:04 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:03:04 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:03:04 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Nome deve ter no mínimo 3 caracteres
+                 2026-03-11 12:03:04 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zezin, CPF: 07116358110, Email: ze@gmail.com
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Ze
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zezin
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zezin]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zezin está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Nome deve ter no mínimo 3 caracteres
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zezin, CPF: 07116358110, Email: ze@gmail.com
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Ze
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zezin
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zezin]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zezin está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Nome deve ter no mínimo 3 caracteres
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zezin, CPF: 07116358110, Email: ze@gmail.com
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Ze
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zezin
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:03:05 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zezin]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zezin está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:03:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:03:05 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Nome deve ter no mínimo 3 caracteres
+                 2026-03-11 12:03:05 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zezin, CPF: 07116358110, Email: ze@gmail.com
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Zezin
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zeze
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 017116358110
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: ze@gmail.com
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login zeze está disponível
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [017116358110]
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 017116358110 está disponível
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email ze@gmail.com está disponível
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [zeze]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [Zezin]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [CLIENTE]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:05:38 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando cliente...
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [017116358110]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [ze@gmail.com]
+                 2026-03-11 12:05:38 TRACE [or.hi.or.jd.bind] binding parameter (3:BIGINT) <- [3]
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ✅ Cliente cadastrado com sucesso!
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do usuário: 3
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do cliente: 2
+                 2026-03-11 12:05:38 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ====================================
+                 2026-03-11 12:05:58 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:05:58 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:05:58 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:06:02 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: Zezin
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: cusujo
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: admin@gmail.com
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [cusujo]
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Login cusujo está disponível
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando CPF único...
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] CPF 07116358110 está disponível
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando email único...
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin@gmail.com]
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Email admin@gmail.com está disponível
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Gerando hash da senha...
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando usuário...
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [cusujo]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (3:VARCHAR) <- [Zezin]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [CLIENTE]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:09:24 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Criando cliente...
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [07116358110]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [admin@gmail.com]
+                 2026-03-11 12:09:24 TRACE [or.hi.or.jd.bind] binding parameter (3:BIGINT) <- [4]
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ✅ Cliente cadastrado com sucesso!
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do usuário: 4
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ID do cliente: 3
+                 2026-03-11 12:09:24 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ====================================
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [cusujo]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:09:38 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:09:38 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:09:38 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:10:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [cusujo]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:10:46 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:46 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:46 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:10:52 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:52 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:10:52 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:15:55 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:15:55 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:15:55 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:16:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:16:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:16:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:18:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:18:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:18:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:21:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:21:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:21:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:28:12 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:12 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:12 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:28:13 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:13 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:28:18 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:28:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:28:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:19 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:28:44 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:44 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:28:44 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:52:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:52:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:52:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:53:10 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:53:10 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: zezin
+                 2026-03-11 12:53:10 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zeze
+                 2026-03-11 12:53:10 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:53:10 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: admin@gmail.com
+                 2026-03-11 12:53:10 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:53:10 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:53:10 WARN  [br.un.to.ew.se.im.ClienteServiceImpl] ⚠️ Tentativa de cadastro com login duplicado: zeze
+                 2026-03-11 12:53:10 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Login já existe
+                 2026-03-11 12:53:10 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zeze, CPF: 07116358110, Email: admin@gmail.com
+                 2026-03-11 12:53:12 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] ===== CADASTRANDO NOVO CLIENTE =====
+                 2026-03-11 12:53:12 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Nome: zezin
+                 2026-03-11 12:53:12 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Login: zeze
+                 2026-03-11 12:53:12 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] CPF: 07116358110
+                 2026-03-11 12:53:12 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Email: admin@gmail.com
+                 2026-03-11 12:53:12 DEBUG [br.un.to.ew.se.im.ClienteServiceImpl] Validando login único...
+                 2026-03-11 12:53:12 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:53:12 WARN  [br.un.to.ew.se.im.ClienteServiceImpl] ⚠️ Tentativa de cadastro com login duplicado: zeze
+                 2026-03-11 12:53:12 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] ❌ Erro de validação ao cadastrar cliente: Login já existe
+                 2026-03-11 12:53:12 ERROR [br.un.to.ew.se.im.ClienteServiceImpl] Login tentado: zeze, CPF: 07116358110, Email: admin@gmail.com
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [zeze]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 12:53:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:53:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 12:53:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:53:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 12:53:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:55:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:59:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:59:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 12:59:57 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 12:59:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 12:59:57 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 12:59:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:05:51 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:05:51 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:05:51 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:10:19 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:11:31 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:11:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:11:31 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:11:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:25 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:12:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:12:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:12:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:12:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:24 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:13:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:13:31 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:13:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:31 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:13:31 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:13:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:03 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:15:03 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:21 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:21 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:49 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:15:49 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:15:49 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:16 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:18 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:17:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:18 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:17:18 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:21 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:17:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:21 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:17:21 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:17:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:17:45 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:48 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:17:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:17:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:17:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:17:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:21:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:22:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:22:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:28 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:22:28 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:22:42 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:22:42 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:05 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-11 13:23:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:23:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:28:08 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:08 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:28:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:28:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:28:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:28:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:28:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:28:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:28:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:35 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:28:35 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:28:35 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:28:35 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:35 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:35 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:28:35 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:28:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:28:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:28:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:28:37 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:37 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:28:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:28:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:28:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:28:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:28:40 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:40 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:28:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:28:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:30:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:30:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:30:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:30:33 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:30:33 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:33 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:30:33 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:30:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:32:56 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:32:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:32:56 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:32:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:33:15 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:33:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:15 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:33:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvigno
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:33:25 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:33:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:33:25 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:33:25 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:29 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:34:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:34:37 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:37 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:34:37 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:39 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:34:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:34:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:34:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvigno
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:34:47 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:36:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:27 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:36:30 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:36:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:30 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:36:30 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvigno
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:36:36 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:38:56 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:56 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:56 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:38:57 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:57 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:38:57 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:39:11 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:11 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:39:13 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
+                 2026-03-11 13:39:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:13 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
+                 2026-03-11 13:39:13 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvigno
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-11 13:39:22 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-11 13:43:38 INFO  [io.quarkus] ewine-api-tp1 stopped in 0.028s
+                 
