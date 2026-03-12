@@ -1,58 +1,16 @@
-2026-03-11 13:51:56 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 6.095s. Listening on: http://localhost:8080
-                 2026-03-11 13:51:56 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
-                 2026-03-11 13:51:56 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
-                 2026-03-11 13:51:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-03-11 13:51:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:51:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-03-11 13:51:59 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-03-11 13:52:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
-                 2026-03-11 13:52:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:02 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
-                 2026-03-11 13:52:02 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvigno
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BOOLEAN) <- [true]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [Vinho tinto elegante com notas de frutas vermelhas maduras, taninos suaves e final persistente.]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [48]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (4:VARCHAR) <- [null]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (5:VARCHAR) <- [Miolo Reserva Cabernet Sauvigno]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (6:DOUBLE) <- [89.9]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (7:VARCHAR) <- [VIN-MIO-CS-2020-750]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (8:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (9:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (10:BIGINT) <- [2]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (11:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (12:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (13:DOUBLE) <- [13.5]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (14:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (15:INTEGER) <- [750]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (16:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (2:BIGINT) <- [1]
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-03-11 13:52:09 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+2026-03-12 09:55:14 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 7.686s. Listening on: http://localhost:8080
+                 2026-03-12 09:55:14 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
+                 2026-03-12 09:55:14 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-03-12 09:56:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-12 09:56:00 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-03-12 09:56:00 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
+                 2026-03-12 09:58:30 INFO  [io.quarkus] ewine-api-tp1 stopped in 0.033s
                  
