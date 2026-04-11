@@ -7,6 +7,7 @@ import java.util.Map;
 import br.unitins.topicos1.ewine.model.produto.vinho.Safra;
 import br.unitins.topicos1.ewine.model.produto.vinho.TipoVinho;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.TipoVinhoFilter;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.NotFoundException;
@@ -15,8 +16,20 @@ import jakarta.ws.rs.NotFoundException;
 public class TipoVinhoRepository implements PanacheRepository<TipoVinho> {
 
   public List<TipoVinho> filtrar(TipoVinhoFilter filtro) {
+    return filtrarQuery(filtro).list();
+  }
+
+  public List<TipoVinho> filtrar(TipoVinhoFilter filtro, int page, int size) {
+    return filtrarQuery(filtro).page(page, size).list();
+  }
+
+  public long countFiltrar(TipoVinhoFilter filtro) {
+    return filtrarQuery(filtro).count();
+  }
+
+  private PanacheQuery<TipoVinho> filtrarQuery(TipoVinhoFilter filtro) {
     if (filtro == null || filtro.isEmpty()) {
-      return listAll();
+      return findAll();
     }
 
     StringBuilder jpql = new StringBuilder("true");
@@ -27,7 +40,7 @@ public class TipoVinhoRepository implements PanacheRepository<TipoVinho> {
       params.put("nome", "%" + filtro.getNome() + "%");
     }
 
-    return find(jpql.toString(), params).list();
+    return find(jpql.toString(), params);
   }
 
 

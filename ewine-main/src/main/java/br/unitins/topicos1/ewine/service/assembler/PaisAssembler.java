@@ -38,7 +38,7 @@ public class PaisAssembler {
       return null;
     }
 
-    return new PaisResponse(pais.getId(), pais.getNome());
+    return new PaisResponse(pais.getId(), pais.getNome(), pais.getSigla());
   }
 
   public List<PaisResponse> toResponse(List<Pais> paises) {

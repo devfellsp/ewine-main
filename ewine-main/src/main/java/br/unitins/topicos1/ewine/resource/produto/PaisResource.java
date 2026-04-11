@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.resource.produto.dto.input.PaisInput;
 import br.unitins.topicos1.ewine.service.PaisService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -21,19 +22,24 @@ public class PaisResource {
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
   @Path("/filter")
-  public Response filtrar(@BeanParam PaisFilter filtro) {
-    var lista = service.filtrar(filtro);
+  public Response filtrar(
+      @BeanParam PaisFilter filtro,
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var lista = service.filtrar(filtro, page, size);
 
-    return lista.isEmpty() ? Response.noContent().build() : Response.ok(lista).build();
+    return Response.ok(lista).build();
   }
 
   @GET
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response buscarTodos() {
-    var paises = service.findAll();
+  public Response buscarTodos(
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var paises = service.findAll(page, size);
 
-    return paises.isEmpty() ? Response.noContent().build() : Response.ok(paises).build();
+    return Response.ok(paises).build();
   }
 
   @GET
@@ -49,7 +55,7 @@ public class PaisResource {
   @POST
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response incluir(PaisInput dto) {
+  public Response incluir(@Valid PaisInput dto) {
     var pais = service.create(dto);
 
     return Response.status(Response.Status.CREATED).entity(pais).build();
@@ -59,7 +65,7 @@ public class PaisResource {
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
   @Path("/{id}")
-  public Response alterar(@PathParam("id") Long id, PaisInput dto) {
+  public Response alterar(@PathParam("id") Long id, @Valid PaisInput dto) {
     var pais = service.update(id, dto);
 
     return Response.ok(pais).build();

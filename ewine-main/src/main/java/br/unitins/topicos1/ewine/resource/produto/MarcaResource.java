@@ -6,6 +6,7 @@ import br.unitins.topicos1.ewine.resource.produto.dto.response.MarcaResponse;
 import br.unitins.topicos1.ewine.service.MarcaService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -21,11 +22,25 @@ public class MarcaResource {
   @GET
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  @Path("/filter")
-  public Response filtrar(@BeanParam MarcaFilter filtro) {
-    var lista = service.filtrar(filtro);
+  public Response buscarTodos(
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var lista = service.buscarTodos(page, size);
 
-    return lista.isEmpty() ? Response.noContent().build() : Response.ok(lista).build();
+    return Response.ok(lista).build();
+  }
+
+  @GET
+  @RolesAllowed({"ADMIN"})
+  @SecurityRequirement(name = "bearerAuth")
+  @Path("/filter")
+  public Response filtrar(
+      @BeanParam MarcaFilter filtro,
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var lista = service.filtrar(filtro, page, size);
+
+    return Response.ok(lista).build();
   }
 
   @GET
@@ -41,7 +56,7 @@ public class MarcaResource {
   @POST
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response cadastrar(MarcaInput input) {
+  public Response cadastrar(@Valid MarcaInput input) {
     MarcaResponse response = service.criar(input);
 
     return Response.ok(response).build();
@@ -51,7 +66,7 @@ public class MarcaResource {
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
   @Path("/{id}")
-  public Response atualizar(@PathParam("id") Long id, MarcaInput input) {
+  public Response atualizar(@PathParam("id") Long id, @Valid MarcaInput input) {
     MarcaResponse marca = service.atualizar(id, input);
 
     return Response.ok(marca).build();

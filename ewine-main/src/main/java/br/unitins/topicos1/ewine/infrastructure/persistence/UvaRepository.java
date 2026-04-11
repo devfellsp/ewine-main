@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.unitins.topicos1.ewine.model.produto.vinho.Pais;
 import br.unitins.topicos1.ewine.model.produto.vinho.Uva;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.UvaFilter;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
@@ -16,8 +15,20 @@ import jakarta.ws.rs.NotFoundException;
 public class UvaRepository implements PanacheRepository<Uva> {
 
   public List<Uva> filtrar(UvaFilter filtro) {
+    return filtrarQuery(filtro).list();
+  }
+
+  public List<Uva> filtrar(UvaFilter filtro, int page, int size) {
+    return filtrarQuery(filtro).page(page, size).list();
+  }
+
+  public long countFiltrar(UvaFilter filtro) {
+    return filtrarQuery(filtro).count();
+  }
+
+  private PanacheQuery<Uva> filtrarQuery(UvaFilter filtro) {
     if (filtro == null || filtro.isEmpty()) {
-      return listAll();
+      return findAll();
     }
 
     StringBuilder jpql = new StringBuilder("true");
@@ -28,7 +39,7 @@ public class UvaRepository implements PanacheRepository<Uva> {
       params.put("nome", "%" + filtro.getNome() + "%");
     }
 
-    return find(jpql.toString(), params).list();
+    return find(jpql.toString(), params);
   }
 
   public List<Uva> findByNome(String nome) {

@@ -2,6 +2,7 @@ package br.unitins.topicos1.ewine.infrastructure.persistence;
 
 import br.unitins.topicos1.ewine.model.produto.vinho.Safra;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.SafraFilter;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.NotFoundException;
@@ -14,8 +15,20 @@ import java.util.Map;
 public class SafraRepository implements PanacheRepository<Safra> {
 
   public List<Safra> filtrar(SafraFilter filtro) {
+    return filtrarQuery(filtro).list();
+  }
+
+  public List<Safra> filtrar(SafraFilter filtro, int page, int size) {
+    return filtrarQuery(filtro).page(page, size).list();
+  }
+
+  public long countFiltrar(SafraFilter filtro) {
+    return filtrarQuery(filtro).count();
+  }
+
+  private PanacheQuery<Safra> filtrarQuery(SafraFilter filtro) {
     if (filtro == null || filtro.isEmpty()) {
-      return listAll();
+      return findAll();
     }
 
     StringBuilder jpql = new StringBuilder("true");
@@ -31,7 +44,7 @@ public class SafraRepository implements PanacheRepository<Safra> {
       params.put("descricao", "%" + filtro.getDescricao() + "%");
     }
 
-    return find(jpql.toString(), params).list();
+    return find(jpql.toString(), params);
   }
 
   public Safra findByAno(Integer ano) {

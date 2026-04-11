@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.model.produto.vinho.Safra;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.SafraFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.SafraInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.SafraResponse;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.SafraService;
 import br.unitins.topicos1.ewine.service.assembler.SafraAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -21,6 +22,13 @@ public class SafraServiceImpl implements SafraService {
   @Override
   public List<SafraResponse> filtrar(SafraFilter filtro) {
     return assembler.toResponse(safraRepository.filtrar(filtro));
+  }
+
+  @Override
+  public PagedResponse<SafraResponse> filtrar(SafraFilter filtro, int page, int size) {
+    List<SafraResponse> content = assembler.toResponse(safraRepository.filtrar(filtro, page, size));
+
+    return new PagedResponse<>(content, safraRepository.countFiltrar(filtro), page, size);
   }
 
   @Override
@@ -75,6 +83,13 @@ public class SafraServiceImpl implements SafraService {
   @Override
   public List<SafraResponse> buscarTodos() {
     return assembler.toResponse(safraRepository.listAll());
+  }
+
+  @Override
+  public PagedResponse<SafraResponse> buscarTodos(int page, int size) {
+    List<SafraResponse> content = assembler.toResponse(safraRepository.findAll().page(page, size).list());
+
+    return new PagedResponse<>(content, safraRepository.count(), page, size);
   }
 
   private void validarAnoEDescricao(int ano, String descricao) {

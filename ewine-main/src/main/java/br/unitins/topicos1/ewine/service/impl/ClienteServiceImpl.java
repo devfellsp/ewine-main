@@ -14,6 +14,7 @@ import br.unitins.topicos1.ewine.service.assembler.ClienteAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.NotFoundException;
 import br.unitins.topicos1.ewine.resource.usuario.cliente.dto.input.ClienteCadastroInput;
 import br.unitins.topicos1.ewine.service.HashService;
 import org.jboss.logging.Logger;
@@ -180,6 +181,17 @@ public class ClienteServiceImpl implements ClienteService {
     LOG.info("Total de clientes encontrados: " + clientes.size());
 
     return clientes.stream().map(cliente -> assembler.toResponse(cliente)).toList();
+  }
+
+  @Override
+  public ClienteResponse buscarMeusDados(String login) {
+    Cliente cliente = repository.findByUsuarioLogin(login);
+
+    if (cliente == null) {
+      throw new NotFoundException("Cliente não encontrado");
+    }
+
+    return assembler.toResponse(cliente);
   }
 
   private void cpfUnico(String cpf) {

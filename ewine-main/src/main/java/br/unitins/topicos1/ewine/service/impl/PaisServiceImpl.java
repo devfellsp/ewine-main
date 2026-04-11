@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.model.produto.vinho.Pais;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.PaisFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.PaisInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.PaisResponse;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.PaisService;
 import br.unitins.topicos1.ewine.service.assembler.PaisAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -21,6 +22,13 @@ public class PaisServiceImpl implements PaisService {
   @Override
   public List<PaisResponse> filtrar(PaisFilter filtro) {
     return assembler.toResponse(paisRepository.filtrar(filtro));
+  }
+
+  @Override
+  public PagedResponse<PaisResponse> filtrar(PaisFilter filtro, int page, int size) {
+    List<PaisResponse> content = assembler.toResponse(paisRepository.filtrar(filtro, page, size));
+
+    return new PagedResponse<>(content, paisRepository.countFiltrar(filtro), page, size);
   }
 
   @Override
@@ -69,5 +77,12 @@ public class PaisServiceImpl implements PaisService {
   @Override
   public List<PaisResponse> findAll() {
     return assembler.toResponse(paisRepository.listAll());
+  }
+
+  @Override
+  public PagedResponse<PaisResponse> findAll(int page, int size) {
+    List<PaisResponse> content = assembler.toResponse(paisRepository.findAll().page(page, size).list());
+
+    return new PagedResponse<>(content, paisRepository.count(), page, size);
   }
 }

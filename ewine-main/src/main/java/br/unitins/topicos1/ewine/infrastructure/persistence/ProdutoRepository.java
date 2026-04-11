@@ -1,8 +1,6 @@
 package br.unitins.topicos1.ewine.infrastructure.persistence;
 
 import br.unitins.topicos1.ewine.model.produto.Produto;
-import br.unitins.topicos1.ewine.model.produto.vinho.Ocasiao;
-import br.unitins.topicos1.ewine.model.produto.vinho.Vinho;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.NotFoundException;
@@ -17,7 +15,27 @@ public class ProdutoRepository implements PanacheRepository<Produto> {
   }
 
   public List<Produto> findAllByNome(String nome) {
+    if (nome == null || nome.isBlank()) {
+      return listAll();
+    }
+
     return find("LOWER(nome) LIKE LOWER(?1)", "%" + nome + "%").list();
+  }
+
+  public List<Produto> findAllByNome(String nome, int page, int size) {
+    if (nome == null || nome.isBlank()) {
+      return findAll().page(page, size).list();
+    }
+
+    return find("LOWER(nome) LIKE LOWER(?1)", "%" + nome + "%").page(page, size).list();
+  }
+
+  public long countByNome(String nome) {
+    if (nome == null || nome.isBlank()) {
+      return count();
+    }
+
+    return find("LOWER(nome) LIKE LOWER(?1)", "%" + nome + "%").count();
   }
 
   public Produto findById(Long id) {

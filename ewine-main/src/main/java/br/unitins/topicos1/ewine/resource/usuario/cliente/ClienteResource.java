@@ -63,6 +63,16 @@ public class ClienteResource {
 
         return Response.ok(response).build();
     }
+
+    @GET
+    @Path("/me")
+    @RolesAllowed("CLIENTE")
+    @SecurityRequirement(name = "bearerAuth")
+    public Response buscarMeusDados() {
+        ClienteResponse response = clienteService.buscarMeusDados(jwt.getSubject());
+        return Response.ok(response).build();
+    }
+
     @GET
     @RolesAllowed({"ADMIN"}) // Apenas Admin pode listar todos
     @SecurityRequirement(name = "bearerAuth")

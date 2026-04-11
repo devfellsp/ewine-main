@@ -15,5 +15,7 @@ public interface ClienteService {
 
   ClienteResponse atualizarEmail(String login, AtualizarEmailCommand emailCommand);
 
+  ClienteResponse buscarMeusDados(String login);
+
   List<ClienteResponse> listarTodos();
 }

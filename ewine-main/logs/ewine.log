@@ -1,104 +1,107 @@
-2026-04-07 00:48:34 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 5.992s. Listening on: http://localhost:8080
-                 2026-04-07 00:48:34 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
-                 2026-04-07 00:48:34 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
-                 2026-04-07 00:54:34 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
-                 2026-04-07 00:54:34 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
-                 2026-04-07 00:54:34 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
-                 2026-04-07 00:55:22 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Listando todos os clientes
-                 2026-04-07 00:55:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:55:22 INFO  [br.un.to.ew.se.im.ClienteServiceImpl] Total de clientes encontrados: 1
-                 2026-04-07 00:55:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:55:22 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:15 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 00:56:40 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
-                 2026-04-07 00:56:40 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
-                 2026-04-07 00:56:40 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
-                 2026-04-07 00:56:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:41 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 00:56:41 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 01:22:06 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:06 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:06 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 01:22:08 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:08 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:08 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 01:22:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
-                 2026-04-07 01:22:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:10 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
-                 2026-04-07 01:22:10 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:17 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 01:22:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Buscando produto por ID: 1
-                 2026-04-07 01:22:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:20 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Produto encontrado: Miolo Reserva Cabernet Sauvignon
-                 2026-04-07 01:22:20 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ===== ATUALIZANDO VINHO =====
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Produto ID: 1
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Novo nome: Miolo Reserva Cabernet Sauvignon
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] ✅ Vinho atualizado com sucesso!
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] =============================
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 01:22:26 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 11:12:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 11:12:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando todos os produtos
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [2]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
-                 2026-04-07 11:12:23 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Total de produtos encontrados: 1
-                 2026-04-07 11:12:30 WARNING [or.ae.re.te.im.AbstractWindowsTerminal] Failed to write out.
-                 2026-04-07 11:12:30 WARNING [or.ae.re.te.im.AbstractWindowsTerminal] Failed to write out.
-                 2026-04-07 11:12:30 INFO  [io.quarkus] ewine-api-tp1 stopped in 0.109s
+2026-04-10 09:11:54 INFO  [io.quarkus] ewine-api-tp1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.0) started in 8.283s. Listening on: http://localhost:8080
+                 2026-04-10 09:11:54 INFO  [io.quarkus] Profile dev activated. Live Coding activated.
+                 2026-04-10 09:11:54 INFO  [io.quarkus] Installed features: [agroal, cdi, compose, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, rest, rest-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-04-10 09:12:40 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3, 6]]
+                 2026-04-10 09:12:40 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:12:41 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:12:41 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:12:41 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:12:41 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 4]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:13:11 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3, 6]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:13:11 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 4]]
+                 2026-04-10 09:13:58 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [joao ]
+                 2026-04-10 09:13:58 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-04-10 09:13:59 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [joao]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [joao]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [1]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:14:05 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:16:21 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [8]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3]]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:16:21 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2]]
+                 2026-04-10 09:16:33 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [joao]
+                 2026-04-10 09:16:33 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [1]
+                 2026-04-10 09:16:33 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:16:33 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:16:33 TRACE [or.hi.or.jd.bind] binding parameter (1:BIGINT) <- [1]
+                 2026-04-10 09:16:45 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [8]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3]]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:16:45 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2]]
+                 2026-04-10 09:16:51 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [8]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [8]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 6, 3]]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 2, 6, 3]]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 4, 6, 7]]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 6]]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3]]
+                 2026-04-10 09:16:51 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 4, 3]]
+                 2026-04-10 09:16:53 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [8]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3]]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:16:53 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2]]
+                 2026-04-10 09:16:55 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [8]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [8]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 6, 3]]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 2, 6, 3]]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 4, 6, 7]]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 6]]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3]]
+                 2026-04-10 09:16:55 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 4, 3]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:VARCHAR) <- [admin]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (2:VARCHAR) <- [6wIlC05FYzn1zo5Nv2wzXDe3Z0EoCmZ9ww8SKmUoz7NU2l481ZGwuBpK1Sf3UfdNxlu+7w0uB+6ecWm9VB2lkQ==]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (3:INTEGER) <- [1]
+                 2026-04-10 09:17:13 INFO  [br.un.to.ew.se.im.ProdutoServiceImpl] Listando produtos paginados
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 3, 6]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[5, 1, 2, 3, 4, 6, 7]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[2, 1, 5, 6, 4]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[3, 1, 2, 6, 7]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 3, 4, 5]]
+                 2026-04-10 09:17:13 TRACE [or.hi.or.jd.bind] binding parameter (1:ARRAY) <- [[1, 2, 4]]
+                 2026-04-10 09:17:42 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:17:42 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:19:27 TRACE [or.hi.or.jd.bind] binding parameter (1:INTEGER) <- [0]
+                 2026-04-10 09:19:27 TRACE [or.hi.or.jd.bind] binding parameter (2:INTEGER) <- [10]
+                 2026-04-10 09:48:14 WARNING [or.ae.re.te.im.AbstractWindowsTerminal] Failed to write out.
+                 2026-04-10 09:48:14 INFO  [io.quarkus] ewine-api-tp1 stopped in 0.031s
+                 2026-04-10 09:48:14 WARNING [or.ae.re.te.im.AbstractWindowsTerminal] Failed to write out.
                  

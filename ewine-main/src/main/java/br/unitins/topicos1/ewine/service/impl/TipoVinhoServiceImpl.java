@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.infrastructure.persistence.TipoVinhoRepository;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.TipoVinhoFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.TipoVinhoInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.TipoVinhoResponse;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.TipoVinhoService;
 import br.unitins.topicos1.ewine.service.assembler.TipoVinhoAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -23,6 +24,13 @@ public class TipoVinhoServiceImpl implements TipoVinhoService {
   @Override
   public List<TipoVinhoResponse> filtrar(TipoVinhoFilter filtro) {
     return assembler.toResponse(tipoVinhoRepository.filtrar(filtro));
+  }
+
+  @Override
+  public PagedResponse<TipoVinhoResponse> filtrar(TipoVinhoFilter filtro, int page, int size) {
+    List<TipoVinhoResponse> content = assembler.toResponse(tipoVinhoRepository.filtrar(filtro, page, size));
+
+    return new PagedResponse<>(content, tipoVinhoRepository.countFiltrar(filtro), page, size);
   }
 
   @Transactional
@@ -64,6 +72,12 @@ public class TipoVinhoServiceImpl implements TipoVinhoService {
     List<TipoVinho> tipos = tipoVinhoRepository.listAll();
 
     return assembler.toResponse(tipos);
+  }
+
+  public PagedResponse<TipoVinhoResponse> listarTodos(int page, int size) {
+    List<TipoVinhoResponse> content = assembler.toResponse(tipoVinhoRepository.findAll().page(page, size).list());
+
+    return new PagedResponse<>(content, tipoVinhoRepository.count(), page, size);
   }
 
   public TipoVinhoResponse buscarPorId(Long id) {

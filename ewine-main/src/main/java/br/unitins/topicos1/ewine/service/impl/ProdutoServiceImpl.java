@@ -6,6 +6,7 @@ import br.unitins.topicos1.ewine.infrastructure.persistence.ProdutoRepository;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.VinhoInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.ProdutoResponse;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.VinhoResponse;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.ProdutoService;
 import br.unitins.topicos1.ewine.service.assembler.ProdutoAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -150,6 +151,7 @@ public class ProdutoServiceImpl implements ProdutoService {
   }
 
   @Override
+  @Transactional
   public VinhoResponse atualizar(Long id, VinhoInput input) {
     LOG.info("===== ATUALIZANDO VINHO =====");
     LOG.info("Produto ID: " + id);
@@ -177,11 +179,13 @@ public class ProdutoServiceImpl implements ProdutoService {
           atualizado.getUvas(),
           atualizado.getEstilo(),
           atualizado.getOcasiao());
+      vinho.atualizarPreco(input.preco());
+      vinho.atualizarEstoque(input.quantEstoque());
 
       LOG.info("✅ Vinho atualizado com sucesso!");
       LOG.info("=============================");
 
-      return assembler.toResponse(atualizado);
+      return assembler.toResponse(vinho);
 
     } catch (Exception e) {
       LOG.error("❌ Erro ao atualizar vinho ID " + id + ": " + e.getMessage());
@@ -219,6 +223,15 @@ public class ProdutoServiceImpl implements ProdutoService {
   }
 
   @Override
+  public PagedResponse<ProdutoResponse> buscarTodos(int page, int size) {
+    LOG.info("Listando produtos paginados");
+
+    List<Produto> lista = produtoRepository.findAll().page(page, size).list();
+
+    return new PagedResponse<>(assembler.toResponse(lista), produtoRepository.count(), page, size);
+  }
+
+  @Override
   public List<ProdutoResponse> buscarPorNome(String nome) {
     LOG.info("Buscando produtos por nome: " + nome);
 
@@ -227,6 +240,15 @@ public class ProdutoServiceImpl implements ProdutoService {
     LOG.info("Produtos encontrados: " + lista.size());
 
     return assembler.toResponse(lista);
+  }
+
+  @Override
+  public PagedResponse<ProdutoResponse> buscarPorNome(String nome, int page, int size) {
+    LOG.info("Buscando produtos por nome com paginação: " + nome);
+
+    List<Produto> lista = produtoRepository.findAllByNome(nome, page, size);
+
+    return new PagedResponse<>(assembler.toResponse(lista), produtoRepository.countByNome(nome), page, size);
   }
 
   private void validarSkuUnico(String sku) {

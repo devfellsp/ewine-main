@@ -6,6 +6,7 @@ import java.util.Map;
 
 import br.unitins.topicos1.ewine.model.produto.vinho.Pais;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.PaisFilter;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.NotFoundException;
@@ -14,8 +15,20 @@ import jakarta.ws.rs.NotFoundException;
 public class PaisRepository implements PanacheRepository<Pais> {
 
   public List<Pais> filtrar(PaisFilter filtro) {
+    return filtrarQuery(filtro).list();
+  }
+
+  public List<Pais> filtrar(PaisFilter filtro, int page, int size) {
+    return filtrarQuery(filtro).page(page, size).list();
+  }
+
+  public long countFiltrar(PaisFilter filtro) {
+    return filtrarQuery(filtro).count();
+  }
+
+  private PanacheQuery<Pais> filtrarQuery(PaisFilter filtro) {
     if (filtro == null || filtro.isEmpty()) {
-      return listAll();
+      return findAll();
     }
 
     StringBuilder jpql = new StringBuilder("true");
@@ -31,7 +44,7 @@ public class PaisRepository implements PanacheRepository<Pais> {
       params.put("sigla", "%" + filtro.getSigla() + "%");
     }
 
-    return find(jpql.toString(), params).list();
+    return find(jpql.toString(), params);
   }
 
   public List<Pais> findByNome(String nome) {

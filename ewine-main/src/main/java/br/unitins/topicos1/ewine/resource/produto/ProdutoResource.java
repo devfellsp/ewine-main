@@ -11,7 +11,6 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import java.util.List;
 import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement;
 
 @Path("/produtos")
@@ -64,20 +63,25 @@ public class ProdutoResource {
   @GET
   @PermitAll
   @SecurityRequirement(name = "bearerAuth")
-  public Response findAll() {
-    List<ProdutoResponse> produtos = produtoService.buscarTodos();
+  public Response findAll(
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var produtos = produtoService.buscarTodos(page, size);
 
-    return produtos.isEmpty() ? Response.noContent().build() : Response.ok(produtos).build();
+    return Response.ok(produtos).build();
   }
 
   @GET
   @PermitAll
   @SecurityRequirement(name = "bearerAuth")
   @Path("/search")
-  public Response findByNome(@QueryParam("nome") String nome) {
-    List<ProdutoResponse> resultados = produtoService.buscarPorNome(nome);
+  public Response findByNome(
+      @QueryParam("nome") String nome,
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var resultados = produtoService.buscarPorNome(nome, page, size);
 
-    return resultados.isEmpty() ? Response.noContent().build() : Response.ok(resultados).build();
+    return Response.ok(resultados).build();
   }
 
   @POST

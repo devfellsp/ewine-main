@@ -1,9 +1,11 @@
 package br.unitins.topicos1.ewine.resource.produto;
 
+import br.unitins.topicos1.ewine.resource.produto.dto.filter.UvaFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.UvaInput;
 import br.unitins.topicos1.ewine.service.UvaService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -19,10 +21,25 @@ public class UvaResource {
   @GET
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response buscarTodos() {
-    var uvas = service.buscarTodos();
+  public Response buscarTodos(
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var uvas = service.buscarTodos(page, size);
 
-    return uvas.isEmpty() ? Response.noContent().build() : Response.ok(uvas).build();
+    return Response.ok(uvas).build();
+  }
+
+  @GET
+  @RolesAllowed({"ADMIN"})
+  @SecurityRequirement(name = "bearerAuth")
+  @Path("/filter")
+  public Response filtrar(
+      @BeanParam UvaFilter filtro,
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var uvas = service.filtrar(filtro, page, size);
+
+    return Response.ok(uvas).build();
   }
 
   @GET
@@ -38,7 +55,7 @@ public class UvaResource {
   @POST
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response incluir(UvaInput dto) {
+  public Response incluir(@Valid UvaInput dto) {
     var uva = service.criar(dto);
 
     return Response.status(Response.Status.CREATED).entity(uva).build();
@@ -48,7 +65,7 @@ public class UvaResource {
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
   @Path("/{id}")
-  public Response alterar(@PathParam("id") Long id, UvaInput dto) {
+  public Response alterar(@PathParam("id") Long id, @Valid UvaInput dto) {
     var uva = service.atualizar(id, dto);
 
     return Response.ok(uva).build();

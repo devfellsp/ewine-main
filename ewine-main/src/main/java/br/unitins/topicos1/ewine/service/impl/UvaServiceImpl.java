@@ -6,7 +6,7 @@ import br.unitins.topicos1.ewine.model.produto.vinho.Uva;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.UvaFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.UvaInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.UvaResponse;
-import br.unitins.topicos1.ewine.resource.shared.dto.input.IdInput;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.UvaService;
 import br.unitins.topicos1.ewine.service.assembler.UvaAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -23,6 +23,13 @@ public class UvaServiceImpl implements UvaService {
   @Override
   public List<UvaResponse> filtrar(UvaFilter filtro) {
     return assembler.toResponse(uvaRepository.filtrar(filtro));
+  }
+
+  @Override
+  public PagedResponse<UvaResponse> filtrar(UvaFilter filtro, int page, int size) {
+    List<UvaResponse> content = assembler.toResponse(uvaRepository.filtrar(filtro, page, size));
+
+    return new PagedResponse<>(content, uvaRepository.countFiltrar(filtro), page, size);
   }
 
   @Override
@@ -79,6 +86,12 @@ public class UvaServiceImpl implements UvaService {
     List<Uva> uvas = uvaRepository.findAll().list();
 
     return assembler.toResponse(uvas);
+  }
+
+  public PagedResponse<UvaResponse> buscarTodos(int page, int size) {
+    List<UvaResponse> content = assembler.toResponse(uvaRepository.findAll().page(page, size).list());
+
+    return new PagedResponse<>(content, uvaRepository.count(), page, size);
   }
 
   private void validarNomeUnico(String nome) {

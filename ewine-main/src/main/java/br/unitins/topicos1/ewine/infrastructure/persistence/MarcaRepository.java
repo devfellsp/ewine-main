@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import br.unitins.topicos1.ewine.model.produto.vinho.Marca;
-import br.unitins.topicos1.ewine.model.produto.vinho.Safra;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.MarcaFilter;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.NotFoundException;
@@ -19,8 +19,20 @@ public class MarcaRepository implements PanacheRepository<Marca> {
   }
 
   public List<Marca> filtrar(MarcaFilter filtro) {
+    return filtrarQuery(filtro).list();
+  }
+
+  public List<Marca> filtrar(MarcaFilter filtro, int page, int size) {
+    return filtrarQuery(filtro).page(page, size).list();
+  }
+
+  public long countFiltrar(MarcaFilter filtro) {
+    return filtrarQuery(filtro).count();
+  }
+
+  private PanacheQuery<Marca> filtrarQuery(MarcaFilter filtro) {
     if (filtro == null || filtro.isEmpty()) {
-      return listAll();
+      return findAll();
     }
 
     StringBuilder jpql = new StringBuilder("true");
@@ -46,7 +58,7 @@ public class MarcaRepository implements PanacheRepository<Marca> {
       params.put("classificacao", "%" + filtro.getClassificacao() + "%");
     }
 
-    return find(jpql.toString(), params).list();
+    return find(jpql.toString(), params);
   }
 
   public Marca findById(Long id) {

@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.resource.produto.dto.input.SafraInput;
 import br.unitins.topicos1.ewine.service.SafraService;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -20,17 +21,41 @@ public class SafraResource {
   @GET
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  @Path("/filter")
-  public Response filtrar(@BeanParam SafraFilter filtro) {
-    var lista = service.filtrar(filtro);
+  public Response buscarTodos(
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var lista = service.buscarTodos(page, size);
 
-    return lista.isEmpty() ? Response.noContent().build() : Response.ok(lista).build();
+    return Response.ok(lista).build();
+  }
+
+  @GET
+  @RolesAllowed({"ADMIN"})
+  @SecurityRequirement(name = "bearerAuth")
+  @Path("/{id}")
+  public Response buscarPorId(@PathParam("id") Long id) {
+    var safra = service.buscarPorId(id);
+
+    return Response.ok(safra).build();
+  }
+
+  @GET
+  @RolesAllowed({"ADMIN"})
+  @SecurityRequirement(name = "bearerAuth")
+  @Path("/filter")
+  public Response filtrar(
+      @BeanParam SafraFilter filtro,
+      @QueryParam("page") @DefaultValue("0") int page,
+      @QueryParam("size") @DefaultValue("10") int size) {
+    var lista = service.filtrar(filtro, page, size);
+
+    return Response.ok(lista).build();
   }
 
   @POST
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
-  public Response incluir(SafraInput dto) {
+  public Response incluir(@Valid SafraInput dto) {
     var safra = service.cadastrar(dto);
 
     return Response.status(Response.Status.CREATED).entity(safra).build();
@@ -40,7 +65,7 @@ public class SafraResource {
   @RolesAllowed({"ADMIN"})
   @SecurityRequirement(name = "bearerAuth")
   @Path("/{id}")
-  public Response alterar(@PathParam("id") Long id, SafraInput dto) {
+  public Response alterar(@PathParam("id") Long id, @Valid SafraInput dto) {
     var safra = service.atualizar(id, dto);
 
     return Response.ok(safra).build();

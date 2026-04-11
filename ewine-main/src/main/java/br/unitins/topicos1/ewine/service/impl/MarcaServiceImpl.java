@@ -5,6 +5,7 @@ import br.unitins.topicos1.ewine.model.produto.vinho.Marca;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.MarcaFilter;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.MarcaInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.MarcaResponse;
+import br.unitins.topicos1.ewine.resource.shared.dto.response.PagedResponse;
 import br.unitins.topicos1.ewine.service.MarcaService;
 import br.unitins.topicos1.ewine.service.assembler.MarcaAssembler;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -20,6 +21,18 @@ public class MarcaServiceImpl implements MarcaService {
   @Inject MarcaAssembler assembler;
 
   @Override
+  public List<MarcaResponse> buscarTodos() {
+    return assembler.toResponse(repository.listAll());
+  }
+
+  @Override
+  public PagedResponse<MarcaResponse> buscarTodos(int page, int size) {
+    List<MarcaResponse> content = assembler.toResponse(repository.findAll().page(page, size).list());
+
+    return new PagedResponse<>(content, repository.count(), page, size);
+  }
+
+  @Override
   public MarcaResponse buscarPorId(Long id) {
     Marca marca = repository.findById(id);
 
@@ -31,6 +44,13 @@ public class MarcaServiceImpl implements MarcaService {
     List<Marca> marcas = repository.filtrar(filtro);
 
     return assembler.toResponse(marcas);
+  }
+
+  @Override
+  public PagedResponse<MarcaResponse> filtrar(MarcaFilter filtro, int page, int size) {
+    List<MarcaResponse> content = assembler.toResponse(repository.filtrar(filtro, page, size));
+
+    return new PagedResponse<>(content, repository.countFiltrar(filtro), page, size);
   }
 
   @Override

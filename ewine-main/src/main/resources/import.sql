@@ -198,3 +198,311 @@ VALUES (
 -- =========================
 INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 1);
 INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 2);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-VAL-MER-2019-750',
+           'Casa Valduga Terroir Merlot',
+           'Merlot brasileiro macio, com aromas de ameixa, especiarias e final aveludado.',
+           NULL,
+           true,
+           119.90,
+           35,
+           13.0,
+           750,
+           1,
+           1,
+           2,
+           2,
+           1,
+           1
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 2);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-SAL-TAN-2018-750',
+           'Salton Intenso Tannat',
+           'Tinto encorpado com taninos marcantes, notas de frutas negras e toque tostado.',
+           NULL,
+           true,
+           74.90,
+           42,
+           13.8,
+           750,
+           1,
+           1,
+           3,
+           3,
+           3,
+           2
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 3);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-MAR-PN-2017-750',
+           'Chateau Margaux Pinot Noir',
+           'Pinot Noir frances delicado, com notas florais, cereja fresca e acidez elegante.',
+           NULL,
+           true,
+           389.90,
+           12,
+           12.8,
+           750,
+           2,
+           1,
+           4,
+           4,
+           1,
+           5
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 7);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-ANT-SAN-2016-750',
+           'Antinori Chianti Sangiovese',
+           'Vinho italiano vibrante, com notas de cereja, ervas secas e taninos finos.',
+           NULL,
+           true,
+           159.90,
+           28,
+           13.5,
+           750,
+           3,
+           1,
+           5,
+           5,
+           1,
+           6
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 12);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-CYT-CAB-2020-750',
+           'Concha y Toro Cabernet Sauvignon',
+           'Cabernet chileno com corpo medio, frutas negras, pimenta e boa persistencia.',
+           NULL,
+           true,
+           69.90,
+           60,
+           13.2,
+           750,
+           6,
+           1,
+           6,
+           1,
+           1,
+           2
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 1);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-CAT-MAL-2019-750',
+           'Catena Zapata Malbec',
+           'Malbec argentino intenso, com ameixa madura, violeta e final longo.',
+           NULL,
+           true,
+           139.90,
+           31,
+           14.0,
+           750,
+           7,
+           1,
+           7,
+           2,
+           1,
+           4
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 4);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-MIO-CHA-2020-750',
+           'Miolo Chardonnay Reserva',
+           'Branco fresco e equilibrado, com notas de abacaxi, pera e leve toque amanteigado.',
+           NULL,
+           true,
+           84.90,
+           44,
+           12.5,
+           750,
+           1,
+           2,
+           1,
+           1,
+           1,
+           6
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 5);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-VAL-MOS-2020-750',
+           'Casa Valduga Moscatel Espumante',
+           'Espumante aromatico, leve e refrescante, com notas de flores brancas e frutas tropicais.',
+           NULL,
+           true,
+           94.90,
+           55,
+           7.5,
+           750,
+           1,
+           4,
+           2,
+           1,
+           6,
+           4
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 8);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-CYT-SBL-2020-750',
+           'Concha y Toro Sauvignon Blanc',
+           'Branco chileno com acidez viva, notas citricas, maracuja e final refrescante.',
+           NULL,
+           true,
+           64.90,
+           48,
+           12.0,
+           750,
+           6,
+           2,
+           6,
+           1,
+           1,
+           6
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 6);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-ANT-ROS-2019-750',
+           'Antinori Rosato Italiano',
+           'Rose seco com aromas de morango, framboesa e final leve para dias quentes.',
+           NULL,
+           true,
+           109.90,
+           26,
+           12.2,
+           750,
+           3,
+           3,
+           5,
+           2,
+           1,
+           3
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 12);
+
+INSERT INTO Produto (
+    id, tipo_produto, data_criacao, sku, nome, descricao, imagem, ativo,
+    preco, estoque_quantidade, teor_alcoolico, volume,
+    pais_id, tipo_vinho_id, marca_id, safra_id, estilo_id, ocasiao_id
+)
+VALUES (
+           nextval('produto_id_seq'),
+           'VINHO',
+           NOW(),
+           'VIN-SAL-RIE-2018-750',
+           'Salton Riesling Meio Seco',
+           'Branco aromatico com dulcor equilibrado, acidez presente e notas de pessego.',
+           NULL,
+           true,
+           59.90,
+           38,
+           11.5,
+           750,
+           1,
+           2,
+           3,
+           3,
+           3,
+           7
+       );
+
+INSERT INTO vinho_uva (vinho_id, uva_id) VALUES (currval('produto_id_seq'), 9);
