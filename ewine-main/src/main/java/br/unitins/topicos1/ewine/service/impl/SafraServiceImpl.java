@@ -57,7 +57,7 @@ public class SafraServiceImpl implements SafraService {
     Safra safra = safraRepository.findById(id);
 
     if (!input.ano().equals(safra.getAno()) || !input.descricao().equals(safra.getDescricao())) {
-      validarAnoEDescricao(safra.getAno(), safra.getDescricao());
+      validarAnoEDescricao(input.ano(), input.descricao());
     }
 
     safra.atualizar(input.ano(), input.descricao());

@@ -148,6 +148,8 @@ public class ClienteServiceImpl implements ClienteService {
         throw new jakarta.ws.rs.NotFoundException("Cliente não encontrado");
       }
 
+      validarSenhaAtual(cliente, emailCommand.senhaAtual());
+
       String emailAnterior = cliente.getEmail();
       LOG.debug("Email anterior: " + emailAnterior);
 
@@ -216,5 +218,16 @@ public class ClienteServiceImpl implements ClienteService {
       throw new IllegalArgumentException("Login já existe");
     }
     LOG.debug("Login " + login + " está disponível");
+  }
+
+  private void validarSenhaAtual(Cliente cliente, String senhaAtual) {
+    if (senhaAtual == null || senhaAtual.isBlank()) {
+      throw new IllegalArgumentException("Senha atual e obrigatoria");
+    }
+
+    String hash = hashService.getHashSenha(senhaAtual);
+    if (!cliente.getUsuario().getSenha().equals(hash)) {
+      throw new jakarta.ws.rs.ForbiddenException("Senha atual invalida");
+    }
   }
 }

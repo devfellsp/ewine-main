@@ -90,7 +90,7 @@ public class PagamentoServiceImpl implements PagamentoService {
         LOG.info("🔵 Processando pagamento CARTÃO DE CRÉDITO para pedido ID: " + pedidoId);
 
         Pedido pedido = buscarPedido(pedidoId);
-        validarFormaPagamento(pedido, "CARTÃO");
+        validarFormaPagamento(pedido, "CARTAO");
 
         // Validar dados do cartão (simulação)
         validarCartao(input);
@@ -126,14 +126,22 @@ public class PagamentoServiceImpl implements PagamentoService {
     }
 
     private void validarFormaPagamento(Pedido pedido, String tipoEsperado) {
-        String formaPagamento = pedido. getPagamento().getFormaPagamento().getNome().toUpperCase();
+        String formaPagamento = normalizar(pedido.getPagamento().getFormaPagamento().getNome());
+        String esperado = normalizar(tipoEsperado);
 
-        if (!formaPagamento.contains(tipoEsperado)) {
+        if (!formaPagamento.contains(esperado)) {
             throw new IllegalArgumentException(
-                    "Forma de pagamento do pedido é " + formaPagamento +
+                    "Forma de pagamento do pedido e " + formaPagamento +
                             ", mas tentou processar como " + tipoEsperado
             );
         }
+    }
+
+    private String normalizar(String valor) {
+        return java.text.Normalizer.normalize(valor, java.text.Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .trim()
+                .toUpperCase();
     }
 
     private void validarCartao(ProcessarPagamentoCartaoInput input) {

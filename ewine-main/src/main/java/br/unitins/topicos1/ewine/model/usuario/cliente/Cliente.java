@@ -1,6 +1,7 @@
 package br.unitins.topicos1.ewine.model.usuario.cliente;
 
 import br.unitins.topicos1.ewine.model.shared.DefaultEntity;
+import br.unitins.topicos1.ewine.model.produto.Produto;
 import br.unitins.topicos1.ewine.model.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -25,6 +26,13 @@ public class Cliente extends DefaultEntity {
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType. LAZY)
   @JoinColumn(name = "cliente_id")
   private List<Endereco> enderecos;
+
+  @ManyToMany
+  @JoinTable(
+      name = "cliente_lista_desejos",
+      joinColumns = @JoinColumn(name = "cliente_id"),
+      inverseJoinColumns = @JoinColumn(name = "produto_id"))
+  private List<Produto> listaDesejos = new ArrayList<>();
 
   public Cliente() {}
 
@@ -62,5 +70,26 @@ public class Cliente extends DefaultEntity {
       }
 
       this.enderecos.add(endereco);
+  }
+
+  public void adicionarDesejo(Produto produto) {
+      if (produto == null) {
+          throw new IllegalArgumentException("Produto e obrigatorio");
+      }
+      if (this.listaDesejos == null) {
+          this.listaDesejos = new ArrayList<>();
+      }
+      boolean jaExiste = this.listaDesejos.stream()
+              .anyMatch(item -> item.getId().equals(produto.getId()));
+      if (!jaExiste) {
+          this.listaDesejos.add(produto);
+      }
+  }
+
+  public void removerDesejo(Long produtoId) {
+      if (this.listaDesejos == null) {
+          return;
+      }
+      this.listaDesejos.removeIf(produto -> produto.getId().equals(produtoId));
   }
 }

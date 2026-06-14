@@ -47,7 +47,7 @@ public class UvaRepository implements PanacheRepository<Uva> {
   }
 
   public boolean nomeExists(String nome) {
-    return find("nome like ?1", nome).list().isEmpty();
+    return find("LOWER(nome) = LOWER(?1)", nome).firstResultOptional().isPresent();
   }
 
   public Uva findById(Long id) {

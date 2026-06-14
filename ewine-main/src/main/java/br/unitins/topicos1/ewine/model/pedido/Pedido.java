@@ -1,5 +1,6 @@
 package br.unitins.topicos1.ewine.model.pedido;
 
+import br.unitins.topicos1.ewine.model.cupom.Cupom;
 import br.unitins.topicos1.ewine.model.pedido.pagamento.FormaPagamento;
 import br.unitins.topicos1.ewine.model.pedido.pagamento.Pagamento;
 import br.unitins.topicos1.ewine.model.shared.DefaultEntity;
@@ -46,12 +47,33 @@ public class Pedido extends DefaultEntity {
   @Column(name = "data_finalizacao")
   private LocalDateTime dataFinalizacao;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "cupom_id")
+  private Cupom cupom;
+
+  @Column(nullable = false)
+  private double desconto;
+
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+  @JoinColumn(name = "pedido_id")
+  private List<PedidoHistorico> historico = new ArrayList<>();
+
   public Pedido(
       int parcelas,
       FormaPagamento formaPagamento,
       Cliente cliente,
       Endereco enderecoEntrega,
       List<ItemPedido> itens) {
+    this(parcelas, formaPagamento, cliente, enderecoEntrega, itens, null);
+  }
+
+  public Pedido(
+      int parcelas,
+      FormaPagamento formaPagamento,
+      Cliente cliente,
+      Endereco enderecoEntrega,
+      List<ItemPedido> itens,
+      Cupom cupom) {
 
     if (cliente == null) {
       throw new IllegalArgumentException("Cliente não pode ser nulo");
@@ -70,6 +92,9 @@ public class Pedido extends DefaultEntity {
     this.itens = new ArrayList<>(itens);
     this.status = PedidoStatus.AGUARDANDO_PAGAMENTO;
     this.dataCriacao = LocalDateTime.now();
+    this.cupom = cupom;
+    this.desconto = cupom == null ? 0 : cupom.calcularDesconto(getSubtotal());
+    registrarHistorico(PedidoStatus.AGUARDANDO_PAGAMENTO, "Pedido criado");
 
     if (parcelas == 1) {
       this.pagamento = Pagamento.aVista(this.getTotal(), formaPagamento);
@@ -97,11 +122,13 @@ public class Pedido extends DefaultEntity {
   }
 
   public void enviar() {
-    if (!this.status.podeTransicionarPara(PedidoStatus.ENVIADO)) {
+    PedidoStatus novoStatus = this.status == PedidoStatus.PAGO ? PedidoStatus.SAIU_PARA_ENTREGA : PedidoStatus.ENVIADO;
+    if (!this.status.podeTransicionarPara(novoStatus)) {
       throw new IllegalStateException("Pedido não pode ser enviado no status atual");
     }
 
-    this.status = PedidoStatus.ENVIADO;
+    this.status = novoStatus;
+    registrarHistorico(novoStatus, "Pedido saiu para entrega");
   }
 
   public void confirmarEntrega() {
@@ -111,6 +138,7 @@ public class Pedido extends DefaultEntity {
 
     this.status = PedidoStatus.ENTREGUE;
     this.dataFinalizacao = LocalDateTime.now();
+    registrarHistorico(PedidoStatus.ENTREGUE, "Pedido entregue");
   }
 
   public void cancelar() {
@@ -121,9 +149,29 @@ public class Pedido extends DefaultEntity {
     this.status = PedidoStatus.CANCELADO;
     this.dataFinalizacao = LocalDateTime.now();
     this.estornarEstoque();
+    registrarHistorico(PedidoStatus.CANCELADO, "Pedido cancelado");
+  }
+
+  public void alterarStatusAdministrativo(PedidoStatus novoStatus) {
+    if (novoStatus == null) {
+      throw new IllegalArgumentException("Status e obrigatorio");
+    }
+    if (!this.status.podeTransicionarPara(novoStatus)) {
+      throw new IllegalStateException("Pedido nao pode transicionar de " + this.status + " para " + novoStatus);
+    }
+
+    this.status = novoStatus;
+    if (novoStatus == PedidoStatus.ENTREGUE || novoStatus == PedidoStatus.CANCELADO) {
+      this.dataFinalizacao = LocalDateTime.now();
+    }
+    registrarHistorico(novoStatus, "Status alterado para " + novoStatus);
   }
 
   public double getTotal() {
+    return Math.max(0, getSubtotal() - desconto);
+  }
+
+  public double getSubtotal() {
     return itens.stream().mapToDouble(ItemPedido::getSubtotal).sum();
   }
 
@@ -133,6 +181,10 @@ public class Pedido extends DefaultEntity {
 
   public List<ItemPedido> getItens() {
     return Collections.unmodifiableList(itens);
+  }
+
+  public List<PedidoHistorico> getHistorico() {
+    return historico == null ? List.of() : Collections.unmodifiableList(historico);
   }
 
   public boolean isPago() {
@@ -153,5 +205,12 @@ public class Pedido extends DefaultEntity {
     for (ItemPedido item : itens) {
       item.getProduto().aumentarEstoque(item.getQuantidade());
     }
+  }
+
+  private void registrarHistorico(PedidoStatus status, String descricao) {
+    if (this.historico == null) {
+      this.historico = new ArrayList<>();
+    }
+    this.historico.add(new PedidoHistorico(status, descricao));
   }
 }

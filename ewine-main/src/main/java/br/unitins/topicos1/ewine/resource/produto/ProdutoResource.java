@@ -3,6 +3,7 @@ package br.unitins.topicos1.ewine.resource.produto;
 import br.unitins.topicos1.ewine.resource.produto.dto.input.VinhoInput;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.ProdutoResponse;
 import br.unitins.topicos1.ewine.resource.produto.dto.response.VinhoResponse;
+import br.unitins.topicos1.ewine.service.ProdutoImagemService;
 import br.unitins.topicos1.ewine.service.ProdutoService;
 import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
@@ -11,7 +12,10 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import java.io.IOException;
 import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement;
+import org.jboss.resteasy.reactive.RestForm;
+import org.jboss.resteasy.reactive.multipart.FileUpload;
 
 @Path("/produtos")
 @Produces(MediaType.APPLICATION_JSON)
@@ -19,6 +23,7 @@ import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement
 public class ProdutoResource {
 
   @Inject ProdutoService produtoService;
+  @Inject ProdutoImagemService produtoImagemService;
 
   @PATCH
   @Path("/{id}/estoque")
@@ -103,6 +108,29 @@ public class ProdutoResource {
 
     return Response.status(Response.Status.OK).entity(response).build();
   }
+
+  @POST
+  @Path("/{id}/imagem")
+  @RolesAllowed({"ADMIN"})
+  @Consumes(MediaType.MULTIPART_FORM_DATA)
+  @SecurityRequirement(name = "bearerAuth")
+  public Response uploadImagem(
+      @PathParam("id") Long id,
+      @RestForm("file") FileUpload file,
+      @RestForm("imagem") FileUpload imagem)
+      throws IOException, InterruptedException {
+    FileUpload upload = file != null ? file : imagem;
+
+    if (upload == null) {
+      throw new IllegalArgumentException("Arquivo de imagem e obrigatorio");
+    }
+
+    return Response.ok(
+            produtoImagemService.salvarImagem(
+                id, upload.uploadedFile(), upload.fileName(), upload.contentType()))
+        .build();
+  }
+
   @DELETE
   @Path("/{id}")
   @RolesAllowed({"ADMIN"})

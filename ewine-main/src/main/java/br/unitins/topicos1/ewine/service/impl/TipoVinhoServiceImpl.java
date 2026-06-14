@@ -53,7 +53,7 @@ public class TipoVinhoServiceImpl implements TipoVinhoService {
     TipoVinho tipoVinho = tipoVinhoRepository.findById(id);
 
     if (!input.nome().equals(tipoVinho.getNome())) {
-      validarNome(tipoVinho.getNome());
+      validarNome(input.nome());
     }
 
     tipoVinho.atualizar(input.nome());

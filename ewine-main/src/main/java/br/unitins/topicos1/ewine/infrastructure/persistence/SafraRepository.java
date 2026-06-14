@@ -65,6 +65,6 @@ public class SafraRepository implements PanacheRepository<Safra> {
   }
 
   public boolean anoAndDescricaoExists(int ano, String descricao) {
-    return find("ano = ?1 and descricao like ?2", ano, descricao).list().isEmpty();
+    return find("ano = ?1 and LOWER(descricao) = LOWER(?2)", ano, descricao).firstResultOptional().isPresent();
   }
 }

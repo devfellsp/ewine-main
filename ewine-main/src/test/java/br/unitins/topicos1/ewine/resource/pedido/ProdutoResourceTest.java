@@ -2,19 +2,21 @@ package br.unitins.topicos1.ewine.resource.pedido;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
-import static io.restassured.RestAssured. given;
-import static org.hamcrest.CoreMatchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.hasSize;
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProdutoResourceTest {
-
-    // ========================================
-    // HELPER:  Gerar Token
-    // ========================================
 
     private String getToken(String login, String senha) {
         return given()
@@ -33,30 +35,24 @@ public class ProdutoResourceTest {
                 .asString();
     }
 
-    // ========================================
-    // TESTES - LISTAR PRODUTOS
-    // ========================================
-
     @Test
     @Order(1)
-    @DisplayName("✅ Listar todos os produtos (público)")
+    @DisplayName("Listar todos os produtos publico")
     public void testListarTodosProdutos() {
         given()
                 .when()
                 .get("/produtos")
                 .then()
                 .statusCode(200)
-                .body("$", notNullValue())
-                .body("[0].id", notNullValue())
-                .body("[0].nome", notNullValue())
-                .body("[0].preco", notNullValue());
-
-        System.out.println("✅ Produtos listados com sucesso!");
+                .body("content", notNullValue())
+                .body("content[0].id", notNullValue())
+                .body("content[0].nome", notNullValue())
+                .body("content[0].preco", notNullValue());
     }
 
     @Test
     @Order(2)
-    @DisplayName("✅ Buscar produto por ID")
+    @DisplayName("Buscar produto por ID")
     public void testBuscarProdutoPorId() {
         given()
                 .when()
@@ -66,31 +62,23 @@ public class ProdutoResourceTest {
                 .body("id", equalTo(1))
                 .body("nome", notNullValue())
                 .body("preco", notNullValue())
-                .body("quantEstoque", notNullValue());  // ← CORRIGIDO
-
-        System.out.println("✅ Produto encontrado por ID!");
+                .body("quantEstoque", notNullValue());
     }
 
     @Test
     @Order(3)
-    @DisplayName("❌ Erro 404 - Produto inexistente")
+    @DisplayName("Erro 404 - Produto inexistente")
     public void testProdutoInexistente() {
         given()
                 .when()
                 .get("/produtos/999999")
                 .then()
                 .statusCode(404);
-
-        System.out.println("✅ Teste 404 produto inexistente passou!");
     }
-
-    // ========================================
-    // TESTES - BUSCAR POR NOME
-    // ========================================
 
     @Test
     @Order(4)
-    @DisplayName("✅ Buscar produtos por nome")
+    @DisplayName("Buscar produtos por nome")
     public void testBuscarProdutosPorNome() {
         given()
                 .queryParam("nome", "Miolo")
@@ -98,33 +86,26 @@ public class ProdutoResourceTest {
                 .get("/produtos/search")
                 .then()
                 .statusCode(200)
-                .body("$", notNullValue())
-                .body("[0].nome", containsString("Miolo"));
-
-        System.out.println("✅ Busca por nome funcionou!");
+                .body("content", notNullValue())
+                .body("content[0].nome", containsString("Miolo"));
     }
 
     @Test
     @Order(5)
-    @DisplayName("✅ Busca sem resultados retorna 204")
+    @DisplayName("Busca sem resultados retorna lista vazia")
     public void testBuscaSemResultados() {
         given()
                 .queryParam("nome", "ProdutoQueNaoExiste12345")
                 .when()
                 .get("/produtos/search")
                 .then()
-                .statusCode(204);  // ← Aceitar 204
-
-        System.out.println("✅ Busca vazia retornou 204!");
+                .statusCode(200)
+                .body("content", hasSize(0));
     }
-
-    // ========================================
-    // TESTES - CRIAR PRODUTO (ADMIN)
-    // ========================================
 
     @Test
     @Order(6)
-    @DisplayName("✅ Admin cria vinho com sucesso")
+    @DisplayName("Admin cria vinho com todos os atributos")
     public void testAdminCriarProduto() {
         String tokenAdmin = getToken("admin", "123");
 
@@ -134,15 +115,15 @@ public class ProdutoResourceTest {
                 .body("""
                     {
                         "nome": "Vinho Teste Automatizado",
-                        "descricao": "Descrição do vinho de teste",
-                        "preco":  129.90,
+                        "descricao": "Descricao do vinho de teste",
+                        "preco": 129.90,
                         "sku": "TEST-AUTO-001",
-                        "estoqueQuantidade": 50,
+                        "quantEstoque": 50,
                         "teorAlcoolico": 13.5,
                         "volume": 750,
-                        "paisDeOrigem": { "id": 1 },
+                        "pais": { "id": 1 },
                         "tipoVinho": { "id": 1 },
-                        "marca":  { "id": 1 },
+                        "marca": { "id": 1 },
                         "safra": { "id": 1 },
                         "estilo": { "id": 1 },
                         "ocasiao": { "id": 1 },
@@ -152,19 +133,90 @@ public class ProdutoResourceTest {
                     }
                     """)
                 .when()
-                .post("/produtos/vinhos")  // ← CAMINHO CORRETO
+                .post("/produtos/vinhos")
                 .then()
                 .statusCode(201)
                 .body("id", notNullValue())
                 .body("nome", equalTo("Vinho Teste Automatizado"))
-                .body("preco", equalTo(129.90f));
+                .body("descricao", equalTo("Descricao do vinho de teste"))
+                .body("preco", equalTo(129.90f))
+                .body("sku", equalTo("TEST-AUTO-001"))
+                .body("quantEstoque", equalTo(50))
+                .body("teorAlcoolico", equalTo(13.5f))
+                .body("volume", equalTo(750))
+                .body("paisDeOrigem.id", equalTo(1))
+                .body("tipoVinho.id", equalTo(1))
+                .body("marca.id", equalTo(1))
+                .body("safra.id", equalTo(1))
+                .body("estilo.id", equalTo(1))
+                .body("ocasiao.id", equalTo(1))
+                .body("uvas", hasSize(1))
+                .body("uvas[0].id", equalTo(1));
+    }
 
-        System.out.println("✅ Vinho criado pelo admin!");
+    @Test
+    @Order(7)
+    @DisplayName("Erro 400 - Criacao de vinho invalida")
+    public void testAdminNaoCriaProdutoComAtributosInvalidos() {
+        String tokenAdmin = getToken("admin", "123");
+
+        given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", "Bearer " + tokenAdmin)
+                .body("""
+                    {
+                        "nome": "",
+                        "descricao": "curta",
+                        "preco": 0,
+                        "sku": "",
+                        "quantEstoque": -1,
+                        "teorAlcoolico": null,
+                        "volume": 0,
+                        "pais": { "id": null },
+                        "tipoVinho": { "id": 0 },
+                        "marca": { "id": 1 },
+                        "safra": { "id": 1 },
+                        "uvas": []
+                    }
+                    """)
+                .when()
+                .post("/produtos/vinhos")
+                .then()
+                .statusCode(400);
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("Erro 403 - Cliente nao pode criar produto")
+    public void testClienteNaoPodeCriarProduto() {
+        String tokenCliente = getToken("joao", "123");
+
+        given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", "Bearer " + tokenCliente)
+                .body(vinhoValidoJson("TEST-CLIENTE-001"))
+                .when()
+                .post("/produtos/vinhos")
+                .then()
+                .statusCode(403);
     }
 
     @Test
     @Order(9)
-    @DisplayName("✅ Admin atualiza vinho")
+    @DisplayName("Erro 401 - Criar produto sem token")
+    public void testCriarProdutoSemToken() {
+        given()
+                .contentType(ContentType.JSON)
+                .body(vinhoValidoJson("TEST-SEM-TOKEN-001"))
+                .when()
+                .post("/produtos/vinhos")
+                .then()
+                .statusCode(401);
+    }
+
+    @Test
+    @Order(10)
+    @DisplayName("Admin atualiza vinho")
     public void testAdminAtualizarProduto() {
         String tokenAdmin = getToken("admin", "123");
 
@@ -174,153 +226,73 @@ public class ProdutoResourceTest {
                 .body("""
                     {
                         "nome": "Vinho Atualizado",
-                        "descricao": "Descrição atualizada",
+                        "descricao": "Descricao atualizada",
                         "preco": 149.90,
                         "sku": "UPD-001",
-                        "estoqueQuantidade": 100,
+                        "quantEstoque": 100,
                         "teorAlcoolico": 14.0,
                         "volume": 750,
-                        "paisDeOrigem": { "id": 1 },
+                        "pais": { "id": 1 },
                         "tipoVinho": { "id": 1 },
                         "marca": { "id": 1 },
-                        "safra":  { "id": 1 },
+                        "safra": { "id": 1 },
                         "estilo": { "id": 1 },
                         "ocasiao": { "id": 1 },
                         "uvas": [{ "id": 1 }]
                     }
                     """)
                 .when()
-                .put("/produtos/1/vinhos")  // ← CAMINHO CORRETO
+                .put("/produtos/1/vinhos")
                 .then()
                 .statusCode(200)
                 .body("nome", equalTo("Vinho Atualizado"))
                 .body("preco", equalTo(149.90f));
-
-        System.out.println("✅ Vinho atualizado!");
-    }
-    @Test
-    @Order(7)
-    @DisplayName("🔒 Erro 403 - Cliente não pode criar produto")
-    public void testClienteNaoPodeCriarProduto() {
-        String tokenCliente = getToken("joao", "123");
-
-        given()
-                .contentType(ContentType.JSON)
-                .header("Authorization", "Bearer " + tokenCliente)
-                .body("""
-                        {
-                            "nome": "Vinho Teste",
-                            "descricao":  "Teste",
-                            "preco": 99.90,
-                            "sku":  "TEST-002",
-                            "estoqueQuantidade": 10
-                        }
-                        """)
-                .when()
-                .post("/produtos")
-                .then()
-                .statusCode(403);
-
-        System.out. println("✅ Teste 403 cliente não cria produto passou!");
     }
 
     @Test
-    @Order(8)
-    @DisplayName("🔒 Erro 401 - Criar produto sem token")
-    public void testCriarProdutoSemToken() {
-        given()
-                .contentType(ContentType.JSON)
-                .body("""
-                        {
-                            "nome": "Vinho Teste",
-                            "descricao":  "Teste",
-                            "preco": 99.90,
-                            "sku": "TEST-003",
-                            "estoqueQuantidade": 10
-                        }
-                        """)
-                .when()
-                .post("/produtos")
-                .then()
-                .statusCode(401);
-
-        System.out. println("✅ Teste 401 sem token passou!");
-    }
-
-    // ========================================
-    // TESTES - ATUALIZAR PRODUTO (ADMIN)
-    // ========================================
-
-    @Test
-    @Order(10)
-    @DisplayName("🔒 Erro 403 - Cliente não pode atualizar produto")
+    @Order(11)
+    @DisplayName("Erro 403 - Cliente nao pode atualizar produto")
     public void testClienteNaoPodeAtualizarProduto() {
         String tokenCliente = getToken("joao", "123");
 
         given()
                 .contentType(ContentType.JSON)
                 .header("Authorization", "Bearer " + tokenCliente)
-                .body("""
-                        {
-                            "nome": "Tentativa de atualização",
-                            "descricao": "Teste",
-                            "preco":  99.90,
-                            "sku": "FAIL-001",
-                            "estoqueQuantidade": 10
-                        }
-                        """)
+                .body(vinhoValidoJson("FAIL-001"))
                 .when()
-                .put("/produtos/1")
+                .put("/produtos/1/vinhos")
                 .then()
                 .statusCode(403);
-
-        System.out.println("✅ Teste 403 cliente não atualiza passou!");
     }
 
-    // ========================================
-    // TESTES - DELETAR PRODUTO (ADMIN)
-    // ========================================
-
     @Test
-    @Order(11)
-    @DisplayName("✅ Admin deleta produto (soft delete)")
+    @Order(12)
+    @DisplayName("Admin deleta produto")
     public void testAdminDeletarProduto() {
         String tokenAdmin = getToken("admin", "123");
 
-        // Criar produto para deletar
         Integer produtoId = given()
                 .contentType(ContentType.JSON)
                 .header("Authorization", "Bearer " + tokenAdmin)
-                .body("""
-                        {
-                            "nome": "Vinho Para Deletar",
-                            "descricao": "Será deletado",
-                            "preco": 79.90,
-                            "sku": "DEL-001",
-                            "estoqueQuantidade": 5
-                        }
-                        """)
+                .body(vinhoValidoJson("DEL-001"))
                 .when()
-                .post("/produtos")
+                .post("/produtos/vinhos")
                 .then()
                 .statusCode(201)
                 .extract()
                 .path("id");
 
-        // Deletar
         given()
                 .header("Authorization", "Bearer " + tokenAdmin)
                 .when()
                 .delete("/produtos/" + produtoId)
                 .then()
                 .statusCode(204);
-
-        System.out.println("✅ Produto deletado!");
     }
 
     @Test
-    @Order(12)
-    @DisplayName("🔒 Erro 403 - Cliente não pode deletar produto")
+    @Order(13)
+    @DisplayName("Erro 403 - Cliente nao pode deletar produto")
     public void testClienteNaoPodeDeletarProduto() {
         String tokenCliente = getToken("joao", "123");
 
@@ -330,7 +302,24 @@ public class ProdutoResourceTest {
                 .delete("/produtos/1")
                 .then()
                 .statusCode(403);
+    }
 
-        System.out.println("✅ Teste 403 cliente não deleta passou!");
+    private String vinhoValidoJson(String sku) {
+        return """
+                {
+                    "nome": "Vinho Teste",
+                    "descricao": "Descricao completa do vinho teste",
+                    "preco": 99.90,
+                    "sku": "%s",
+                    "quantEstoque": 10,
+                    "teorAlcoolico": 13.0,
+                    "volume": 750,
+                    "pais": { "id": 1 },
+                    "tipoVinho": { "id": 1 },
+                    "marca": { "id": 1 },
+                    "safra": { "id": 1 },
+                    "uvas": [{ "id": 1 }]
+                }
+                """.formatted(sku);
     }
 }

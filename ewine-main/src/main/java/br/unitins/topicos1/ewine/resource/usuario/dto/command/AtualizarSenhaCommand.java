@@ -1,3 +1,3 @@
 package br.unitins.topicos1.ewine.resource.usuario.dto.command;
 
-public record AtualizarSenhaCommand(String senha){}
+public record AtualizarSenhaCommand(String senhaAtual, String senha) {}

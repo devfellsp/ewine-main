@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.unitins.topicos1.ewine.model.produto.vinho.Safra;
 import br.unitins.topicos1.ewine.model.produto.vinho.TipoVinho;
 import br.unitins.topicos1.ewine.resource.produto.dto.filter.TipoVinhoFilter;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
@@ -49,7 +48,7 @@ public class TipoVinhoRepository implements PanacheRepository<TipoVinho> {
   }
 
   public boolean nomeExits(String nome) {
-    return !find("nome like ?1").list().isEmpty();
+    return find("LOWER(nome) = LOWER(?1)", nome).firstResultOptional().isPresent();
   }
 
   public TipoVinho findById(Long id) {

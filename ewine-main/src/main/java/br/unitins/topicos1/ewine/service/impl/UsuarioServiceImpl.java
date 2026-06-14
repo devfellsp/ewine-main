@@ -40,6 +40,10 @@ public class UsuarioServiceImpl implements UsuarioService {
   public UsuarioResponse buscarPorLogin(String login) {
     Usuario usuario = repository.findByLogin(login);
 
+    if (usuario == null) {
+      return null;
+    }
+
     return assembler.toResponse(usuario);
   }
 
@@ -47,6 +51,10 @@ public class UsuarioServiceImpl implements UsuarioService {
   public UsuarioResponse buscarPorLoginESenha(LoginInput input) {
     Usuario usuario =
         repository.findByLoginSenha(input.login(), hashService.getHashSenha(input.senha()));
+
+    if (usuario == null) {
+      return null;
+    }
 
     return assembler.toResponse(usuario);
   }
@@ -71,17 +79,18 @@ public class UsuarioServiceImpl implements UsuarioService {
   @Transactional
   public void atualizar(String login, AtualizarUsuarioCommand command) {
     Usuario usuario = repository.findByLogin(login);
+    validarSenhaAtual(usuario, command.senhaAtual());
 
     usuario.atualizar(command.nome());
   }
 
   @Override
+  @Transactional
   public void atualizarSenha(String login, AtualizarSenhaCommand command) {
-    String senha = hashService.getHashSenha(command.senha());
-
     Usuario usuario = repository.findByLogin(login);
+    validarSenhaAtual(usuario, command.senhaAtual());
 
-    usuario.alterarSenha(senha);
+    usuario.alterarSenha(hashService.getHashSenha(command.senha()));
   }
 
   @Override
@@ -93,6 +102,19 @@ public class UsuarioServiceImpl implements UsuarioService {
   private void validarLogin(String login) {
     if (repository.loginExists(login)) {
       throw new IllegalArgumentException("login existente");
+    }
+  }
+
+  private void validarSenhaAtual(Usuario usuario, String senhaAtual) {
+    if (usuario == null) {
+      throw new jakarta.ws.rs.NotFoundException("Usuario nao encontrado");
+    }
+    if (senhaAtual == null || senhaAtual.isBlank()) {
+      throw new IllegalArgumentException("Senha atual e obrigatoria");
+    }
+    String senhaAtualHash = hashService.getHashSenha(senhaAtual);
+    if (!usuario.getSenha().equals(senhaAtualHash)) {
+      throw new jakarta.ws.rs.ForbiddenException("Senha atual invalida");
     }
   }
 }
